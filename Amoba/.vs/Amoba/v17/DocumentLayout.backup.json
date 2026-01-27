@@ -1,0 +1,36 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\Admin\\OneDrive - Bajai SZC T\u00FCrr Istv\u00E1n Technikum\\\u00D3r\u00E1k\\IKT\\Amoba\\Amoba\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{EE2EAB6F-EBD1-45F4-B69D-7C6003DC351E}|Amoba\\Amoba.csproj|c:\\users\\admin\\onedrive - bajai szc t\u00FCrr istv\u00E1n technikum\\\u00F3r\u00E1k\\ikt\\amoba\\amoba\\amoba\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{EE2EAB6F-EBD1-45F4-B69D-7C6003DC351E}|Amoba\\Amoba.csproj|solutionrelative:amoba\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 0,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Form1.cs [Design]",
+              "DocumentMoniker": "C:\\Users\\Admin\\OneDrive - Bajai SZC T\u00FCrr Istv\u00E1n Technikum\\\u00D3r\u00E1k\\IKT\\Amoba\\Amoba\\Amoba\\Form1.cs",
+              "RelativeDocumentMoniker": "Amoba\\Form1.cs",
+              "ToolTip": "C:\\Users\\Admin\\OneDrive - Bajai SZC T\u00FCrr Istv\u00E1n Technikum\\\u00D3r\u00E1k\\IKT\\Amoba\\Amoba\\Amoba\\Form1.cs [Design]",
+              "RelativeToolTip": "Amoba\\Form1.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-01-27T18:11:55.763Z",
+              "EditorCaption": " [Design]"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

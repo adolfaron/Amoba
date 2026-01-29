@@ -15,7 +15,10 @@ namespace Amoba
             {
                 this.Show();
             }
-            catch (Exception) { Application.Exit(); };
+            catch (Exception) 
+            {
+                Application.Exit(); 
+            };
         }
     }
 }

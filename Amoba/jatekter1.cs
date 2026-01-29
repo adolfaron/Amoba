@@ -15,6 +15,11 @@ namespace Amoba
     {
         const int meret = 30;
         PictureBox[,] cellak = new PictureBox[meret, meret];
+        List<string> kepek = new List<string> { "img/ures.png", "img/kor.png","img/x.png" };
+        int kiJon = 0;
+        //1 kor
+        //2 x
+        int jatekosSzam = 2;
         public jatekter1()
         {
             InitializeComponent();
@@ -30,8 +35,36 @@ namespace Amoba
                     cella.BackColor = Color.LightGray;
                     cella.Location = new Point(oszlop * (cella.Size.Width + 3) + 12, sor * (cella.Size.Height + 3) + 12);
                         this.Controls.Add(cella);
+                    cella.Click += new EventHandler(cekkaKatt);
+                    cella.SizeMode = PictureBoxSizeMode.StretchImage;
+                    cella.Tag = $"{sor}_{oszlop}_0";
                 }
             }
+            kiJon = 1;
+        }
+
+        private void cekkaKatt(object sender, EventArgs e)
+        {
+            PictureBox kattintott = sender as PictureBox;
+            int sor = Convert.ToInt32(kattintott.Tag.ToString().Split('_')[0]);
+            int oszlop = Convert.ToInt32(kattintott.Tag.ToString().Split('_')[1]);
+            int ertek = Convert.ToInt32(kattintott.Tag.ToString().Split('_')[2]);
+            if (ertek != 0)
+                return;
+            kattintott.Image = Image.FromFile(kepek[kiJon]);
+            kattintott.Tag = $"{sor}_{oszlop}_{kiJon}";
+            kiJon += 1;
+            if (kiJon == jatekosSzam + 1) {
+                kiJon = 1;
+            }
+            
+
+            ellenoriz(sor, oszlop);
+        }
+
+        private void ellenoriz(int sor, int oszlop)
+        {
+            
         }
     }
 }

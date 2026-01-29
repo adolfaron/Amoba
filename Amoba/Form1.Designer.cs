@@ -33,11 +33,11 @@
             // 
             // button1
             // 
-            button1.Location = new Point(337, 121);
+            button1.Location = new Point(327, 202);
             button1.Name = "button1";
             button1.Size = new Size(75, 23);
             button1.TabIndex = 0;
-            button1.Text = "button1";
+            button1.Text = "Start";
             button1.UseVisualStyleBackColor = true;
             button1.Click += button1_Click;
             // 
@@ -48,7 +48,7 @@
             ClientSize = new Size(800, 450);
             Controls.Add(button1);
             Name = "Form1";
-            Text = "Form1";
+            Text = "Amőba";
             ResumeLayout(false);
         }
 

@@ -34,3 +34,21 @@ D:\AÁ\Amoba\Amoba\obj\Debug\net8.0-windows\refint\Amoba.dll
 D:\AÁ\Amoba\Amoba\obj\Debug\net8.0-windows\Amoba.pdb
 D:\AÁ\Amoba\Amoba\obj\Debug\net8.0-windows\Amoba.genruntimeconfig.cache
 D:\AÁ\Amoba\Amoba\obj\Debug\net8.0-windows\ref\Amoba.dll
+C:\Users\Admin\OneDrive - Bajai SZC Türr István Technikum\Órák\IKT\Amoba\Amoba\bin\Debug\net8.0-windows\Amoba.exe
+C:\Users\Admin\OneDrive - Bajai SZC Türr István Technikum\Órák\IKT\Amoba\Amoba\bin\Debug\net8.0-windows\Amoba.deps.json
+C:\Users\Admin\OneDrive - Bajai SZC Türr István Technikum\Órák\IKT\Amoba\Amoba\bin\Debug\net8.0-windows\Amoba.runtimeconfig.json
+C:\Users\Admin\OneDrive - Bajai SZC Türr István Technikum\Órák\IKT\Amoba\Amoba\bin\Debug\net8.0-windows\Amoba.dll
+C:\Users\Admin\OneDrive - Bajai SZC Türr István Technikum\Órák\IKT\Amoba\Amoba\bin\Debug\net8.0-windows\Amoba.pdb
+C:\Users\Admin\OneDrive - Bajai SZC Türr István Technikum\Órák\IKT\Amoba\Amoba\obj\Debug\net8.0-windows\Amoba.Form1.resources
+C:\Users\Admin\OneDrive - Bajai SZC Türr István Technikum\Órák\IKT\Amoba\Amoba\obj\Debug\net8.0-windows\Amoba.jatekter1.resources
+C:\Users\Admin\OneDrive - Bajai SZC Türr István Technikum\Órák\IKT\Amoba\Amoba\obj\Debug\net8.0-windows\Amoba.csproj.GenerateResource.cache
+C:\Users\Admin\OneDrive - Bajai SZC Türr István Technikum\Órák\IKT\Amoba\Amoba\obj\Debug\net8.0-windows\Amoba.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Admin\OneDrive - Bajai SZC Türr István Technikum\Órák\IKT\Amoba\Amoba\obj\Debug\net8.0-windows\Amoba.AssemblyInfoInputs.cache
+C:\Users\Admin\OneDrive - Bajai SZC Türr István Technikum\Órák\IKT\Amoba\Amoba\obj\Debug\net8.0-windows\Amoba.AssemblyInfo.cs
+C:\Users\Admin\OneDrive - Bajai SZC Türr István Technikum\Órák\IKT\Amoba\Amoba\obj\Debug\net8.0-windows\Amoba.csproj.CoreCompileInputs.cache
+C:\Users\Admin\OneDrive - Bajai SZC Türr István Technikum\Órák\IKT\Amoba\Amoba\obj\Debug\net8.0-windows\Amoba.sourcelink.json
+C:\Users\Admin\OneDrive - Bajai SZC Türr István Technikum\Órák\IKT\Amoba\Amoba\obj\Debug\net8.0-windows\Amoba.dll
+C:\Users\Admin\OneDrive - Bajai SZC Türr István Technikum\Órák\IKT\Amoba\Amoba\obj\Debug\net8.0-windows\refint\Amoba.dll
+C:\Users\Admin\OneDrive - Bajai SZC Türr István Technikum\Órák\IKT\Amoba\Amoba\obj\Debug\net8.0-windows\Amoba.pdb
+C:\Users\Admin\OneDrive - Bajai SZC Türr István Technikum\Órák\IKT\Amoba\Amoba\obj\Debug\net8.0-windows\Amoba.genruntimeconfig.cache
+C:\Users\Admin\OneDrive - Bajai SZC Türr István Technikum\Órák\IKT\Amoba\Amoba\obj\Debug\net8.0-windows\ref\Amoba.dll

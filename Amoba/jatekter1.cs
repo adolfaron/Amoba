@@ -16,15 +16,19 @@ namespace Amoba
     {
         const int meret = 30;
         PictureBox[,] cellak = new PictureBox[meret, meret];
-        List<string> kepek = new List<string> { "img/ures.png", "img/kor.png", "img/x.png" };
+        List<string> kepek = new List<string> { "img/ures.png", "img/kor.png", "img/x.png", "img/haromszog.png" };
         List<string> ellenorizve = new List<string>();
+        List<string> ellenorizveSzin = new List<string>();
         string kattintottKord = "-1_-1";
         int kiJon = 0;
         //1 kor
         //2 x
-        int jatekosSzam = 2;
+        int jatekosSzam = 1;
         int[] iranyDb = new int[] { 1, 1, 1, 1 };//függőleges, jobb föl átló, vízszintes, jobb le átló
-        //föl, Jobb föl, jobb, jobb le, le, bal le, bal, bal föl
+        //föl, Jobb föl, jobb, jobb le, le, bal le,                     bal, bal föl
+        int[] iranyDbSzin = new int[] { 1, 1, 1, 1 };
+
+        string[] iranyOK = new string[] { "-1_0", "-1_1", "0_1", "1_1", "1_0" , "1_-1" , "0_-1" , "-1_-1" };
         public jatekter1()
         {
             InitializeComponent();
@@ -125,7 +129,7 @@ namespace Amoba
                             }*/
                             if (!ellenorizve.Contains(s + "_" + o))
                             {
-                                //cellak[s, o].BackColor = Color.Red;
+                                //cellak[s, o].BackColor = Color.Blue;
 
                                 ellenoriz(s, o, ertek, (i.ToString() + "_" + j.ToString()));
                             }
@@ -152,12 +156,13 @@ namespace Amoba
                     if (iranyDb[ind] + iranyDb[ind + 4] >= 5)
                     {
                         //MessageBox.Show("Nyert a " + (ertek == 1 ? "kör" : ertek == 2 ? "X":"hiba") + " játékos!");
-                        ellenorizve.Clear();
-                        iranyDb = new int[] { 1, 1, 1, 1, 0, 0, 0, 0 };
+                        ellenorizveSzin.Clear();
+                        //iranyDbSzin = new int[] { 1, 1, 1, 1, 0, 0, 0, 0 };
                         int szinSor = Convert.ToInt32(kattintottKord.Split('_')[0]);
                         int szinOszl = Convert.ToInt32(kattintottKord.Split('_')[1]);
-                        cellaszinez(szinSor, szinOszl, ertek, irany);
-                        MessageBox.Show("Nyert a " + ertek + " játékos!");
+                        cellaszinez(szinSor, szinOszl, ertek, iranyOK[ind]);
+                        //MessageBox.Show("Nyert a " + ertek + " játékos!");
+                        
                     }
                 }
 
@@ -169,7 +174,9 @@ namespace Amoba
                     if (!ellenorizve.Contains(s + "_" + o))
                     {
                         //cellak[s, o].BackColor = Color.Red;
+                        cellak[sor, oszlop].BackColor = Color.Blue;
                         ellenoriz(s, o, ertek, (ellS.ToString() + "_" + ellO.ToString()));
+
                     }
 
 
@@ -185,7 +192,7 @@ namespace Amoba
 
             string koord  = $"{s}_{o}";
 
-            switch (koord)
+            /*switch (koord)
             {
                 case "-1_0":
                     return 0; //föl
@@ -213,7 +220,8 @@ namespace Amoba
 
                 default:
                     throw new ArgumentException("Érvénytelen koordináta: " + koord);
-            }
+            }*/
+            return iranyOK.ToList().IndexOf(koord);
         }
 
         private void jatekter1_Load(object sender, EventArgs e)
@@ -223,17 +231,17 @@ namespace Amoba
 
         private void cellaszinez(int sor, int oszlop, int ertek, string irany)
         {
-            if (ellenorizve.Contains(sor + "_" + oszlop))
+            if (ellenorizveSzin.Contains(sor + "_" + oszlop))
             {
                 return;
             }
-            ellenorizve.Add((sor + "_" + oszlop));
+            ellenorizveSzin.Add((sor + "_" + oszlop));
             int ellS = Convert.ToInt32(irany.Split('_')[0]);
             int ellO = Convert.ToInt32(irany.Split('_')[1]);
 
             int s = sor + ellS;
             int o = oszlop + ellO;
-            cellak[sor, oszlop].BackColor = Color.Red;
+            //cellak[sor, oszlop].BackColor = Color.Red;
             int ujertek = Convert.ToInt32(cellak[s, o].Tag.ToString().Split('_')[2]);
 
             while (ujertek == ertek)

@@ -24,6 +24,8 @@ namespace Amoba
 
         PictureBox[,] cellak;
         Label kovJatekosMutat;
+        ListBox jatekosok;
+
         PictureBox kovJatekosMutatKep;
         List<string> kepek = new List<string> { "img/ures.png", "img/kor.png", "img/x.png", "img/haromszog.png" };
         List<string> ellenorizve = new List<string>();
@@ -62,11 +64,11 @@ namespace Amoba
                     cella.SizeMode = PictureBoxSizeMode.StretchImage;
                     cella.Tag = $"{sor}_{oszlop}_0";
                 }
-            }
+            } 
             kovJatekosMutat = new Label()
             {
                 Text = "Következő játékos:",
-                Size = new Size(300, 60),
+                Size = new Size(300, 30),
                 TextAlign = ContentAlignment.MiddleCenter
             };
             kovJatekosMutatKep = new PictureBox()
@@ -75,12 +77,29 @@ namespace Amoba
                 Size = new Size(50, 50),
                 SizeMode = PictureBoxSizeMode.StretchImage,
             };
+            jatekosok = new ListBox()
+            {
+                Size = new Size(180, 200),
+                SelectionMode = SelectionMode.One,
+                BorderStyle = BorderStyle.None,
+                BackColor = this.BackColor,
+                ForeColor = Color.Black,
+                Enabled = false,
+            };
+            jatekosok.Height = jatekosSzam * 20 + 10;
+            for (int i = 1; i <= jatekosSzam; i++)
+            {
+                jatekosok.Items.Add(jatekosNevek[i]);
+            }
+
+            this.Controls.Add(jatekosok);
             this.Controls.Add(kovJatekosMutatKep);
             this.Controls.Add(kovJatekosMutat);
             elhelyezesSzamol();
             kiJon = 1;
-            kovJatekosMutat.Text = "Következő játékos:\n" + jatekosNevek[kiJon];
+            //kovJatekosMutat.Text = "Következő játékos:\n" + jatekosNevek[kiJon];
             kovJatekosMutatKep.Image = Image.FromFile(kepek[kiJon]);
+            jatekosok.SelectedIndex = kiJon - 1;
 
         }
 
@@ -90,7 +109,8 @@ namespace Amoba
             cellameret = (int)(this.ClientSize.Width * (2.0 / 3.0) / meret);
             this.Height = 2 * elhagyas + (cellameret + koz) * meret+2*cellameret;
             kovJatekosMutat.Location = new Point((this.ClientSize.Width - (2 * elhagyas + (cellameret + koz) * meret)) / 2 + (2 * elhagyas + (cellameret + koz) * meret) - kovJatekosMutat.Width / 2, elhagyas);
-            kovJatekosMutatKep.Location = new Point((this.ClientSize.Width - (2 * elhagyas + (cellameret + koz) * meret)) / 2 + (2 * elhagyas + (cellameret + koz) * meret) - kovJatekosMutatKep.Width / 2, elhagyas*2+ kovJatekosMutat.Height);
+            kovJatekosMutatKep.Location = new Point((this.ClientSize.Width - (2 * elhagyas + (cellameret + koz) * meret)) / 2 + (2 * elhagyas + (cellameret + koz) * meret) - kovJatekosMutatKep.Width / 2, elhagyas*3+ kovJatekosMutat.Height+ jatekosok.Height);
+            jatekosok.Location = new Point((this.ClientSize.Width - (2 * elhagyas + (cellameret + koz) * meret)) / 2 + (2 * elhagyas + (cellameret + koz) * meret) - jatekosok.Width / 2, elhagyas*2+ kovJatekosMutat.Height);            
             for (int sor = 0; sor < meret; sor++)
             {
                 for (int oszlop = 0; oszlop < meret; oszlop++)
@@ -119,7 +139,8 @@ namespace Amoba
             {
                 kiJon = 1;
             }
-            kovJatekosMutat.Text = "Következő játékos:\n" + jatekosNevek[kiJon];
+            //kovJatekosMutat.Text = "Következő játékos:\n" + jatekosNevek[kiJon];
+            jatekosok.SelectedIndex = kiJon-1;
             kovJatekosMutatKep.Image = Image.FromFile(kepek[kiJon]);
 
             //MessageBox.Show("irányok: " + string.Join(", ", iranyDb)+"\n");

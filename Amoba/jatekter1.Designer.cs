@@ -1,4 +1,5 @@
-﻿namespace Amoba
+﻿
+namespace Amoba
 {
     partial class jatekter1
     {
@@ -50,7 +51,13 @@
             Name = "jatekter1";
             Text = "jatekter1";
             Load += jatekter1_Load;
+            this.Resize += new System.EventHandler(this.meretez);
             ResumeLayout(false);
+        }
+
+        private void meretez(object sender, EventArgs e)
+        {
+            this.elhelyezesSzamol();
         }
 
         #endregion

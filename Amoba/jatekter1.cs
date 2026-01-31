@@ -14,42 +14,92 @@ namespace Amoba
 
     public partial class jatekter1 : Form
     {
-        const int meret = 30;
-        PictureBox[,] cellak = new PictureBox[meret, meret];
+        int meret = 30;
+        int jatekosSzam = 2;
+        List<string> jatekosNevek =new List<string> { "Üres", "Kör", "X"};
+
+        int cellameret;
+        int elhagyas = 12;
+        int koz = 3;
+
+        PictureBox[,] cellak;
+        Label kovJatekosMutat;
+        PictureBox kovJatekosMutatKep;
         List<string> kepek = new List<string> { "img/ures.png", "img/kor.png", "img/x.png", "img/haromszog.png" };
         List<string> ellenorizve = new List<string>();
         List<string> ellenorizveSzin = new List<string>();
         string kattintottKord = "-1_-1";
-        int kiJon = 0;
-        //1 kor
-        //2 x
-        int jatekosSzam = 1;
+        int kiJon = 0;        
+
         int[] iranyDb = new int[] { 1, 1, 1, 1 };//függőleges, jobb föl átló, vízszintes, jobb le átló
         //föl, Jobb föl, jobb, jobb le, le, bal le,                     bal, bal föl
         int[] iranyDbSzin = new int[] { 1, 1, 1, 1 };
 
         string[] iranyOK = new string[] { "-1_0", "-1_1", "0_1", "1_1", "1_0" , "1_-1" , "0_-1" , "-1_-1" };
-        public jatekter1()
+        public jatekter1(int ujMeret, int Ujjatekosszam, List<string> ujNevek)
         {
             InitializeComponent();
+            meret = ujMeret;
+            jatekosSzam = Ujjatekosszam;
+            jatekosNevek = ujNevek;
+            cellak = new PictureBox[meret, meret];
             this.BackColor = Color.White;
-            Text = "Amóba";
+            Text = "Amőba";
+            cellameret = (int)(this.ClientSize.Width * (2.0 / 3.0) / meret);
+            
+
             for (int sor = 0; sor < meret; sor++)
             {
                 for (int oszlop = 0; oszlop < meret; oszlop++)
                 {
                     cellak[sor, oszlop] = new PictureBox();
                     PictureBox cella = cellak[sor, oszlop];
-                    cella.Size = new Size(25, 25);
+                    cella.Size = new Size(cellameret, cellameret);
                     cella.BackColor = Color.LightGray;
-                    cella.Location = new Point(oszlop * (cella.Size.Width + 3) + 12, sor * (cella.Size.Height + 3) + 12);
+                    cella.Location = new Point(oszlop * (cella.Size.Width + koz) + elhagyas, sor * (cella.Size.Height + koz) + elhagyas);
                     this.Controls.Add(cella);
                     cella.Click += new EventHandler(cekkaKatt);
                     cella.SizeMode = PictureBoxSizeMode.StretchImage;
                     cella.Tag = $"{sor}_{oszlop}_0";
                 }
             }
+            kovJatekosMutat = new Label()
+            {
+                Text = "Következő játékos:",
+                Size = new Size(300, 60),
+                TextAlign = ContentAlignment.MiddleCenter
+            };
+            kovJatekosMutatKep = new PictureBox()
+            {
+                Image = Image.FromFile(kepek[1]),
+                Size = new Size(50, 50),
+                SizeMode = PictureBoxSizeMode.StretchImage,
+            };
+            this.Controls.Add(kovJatekosMutatKep);
+            this.Controls.Add(kovJatekosMutat);
+            elhelyezesSzamol();
             kiJon = 1;
+            kovJatekosMutat.Text = "Következő játékos:\n" + jatekosNevek[kiJon];
+            kovJatekosMutatKep.Image = Image.FromFile(kepek[kiJon]);
+
+        }
+
+        private void elhelyezesSzamol()
+        {
+            
+            cellameret = (int)(this.ClientSize.Width * (2.0 / 3.0) / meret);
+            this.Height = 2 * elhagyas + (cellameret + koz) * meret+2*cellameret;
+            kovJatekosMutat.Location = new Point((this.ClientSize.Width - (2 * elhagyas + (cellameret + koz) * meret)) / 2 + (2 * elhagyas + (cellameret + koz) * meret) - kovJatekosMutat.Width / 2, elhagyas);
+            kovJatekosMutatKep.Location = new Point((this.ClientSize.Width - (2 * elhagyas + (cellameret + koz) * meret)) / 2 + (2 * elhagyas + (cellameret + koz) * meret) - kovJatekosMutatKep.Width / 2, elhagyas*2+ kovJatekosMutat.Height);
+            for (int sor = 0; sor < meret; sor++)
+            {
+                for (int oszlop = 0; oszlop < meret; oszlop++)
+                {
+                    PictureBox cella = cellak[sor, oszlop];
+                    cella.Size = new Size(cellameret, cellameret);
+                    cella.Location = new Point(oszlop * (cella.Size.Width + koz) + elhagyas, sor * (cella.Size.Height + koz) + elhagyas);
+                }
+            }
         }
 
         private void cekkaKatt(object sender, EventArgs e)
@@ -69,6 +119,9 @@ namespace Amoba
             {
                 kiJon = 1;
             }
+            kovJatekosMutat.Text = "Következő játékos:\n" + jatekosNevek[kiJon];
+            kovJatekosMutatKep.Image = Image.FromFile(kepek[kiJon]);
+
             //MessageBox.Show("irányok: " + string.Join(", ", iranyDb)+"\n");
             kiir.Clear();
 
@@ -174,7 +227,7 @@ namespace Amoba
                     if (!ellenorizve.Contains(s + "_" + o))
                     {
                         //cellak[s, o].BackColor = Color.Red;
-                        cellak[sor, oszlop].BackColor = Color.Blue;
+                        //cellak[sor, oszlop].BackColor = Color.Blue;
                         ellenoriz(s, o, ertek, (ellS.ToString() + "_" + ellO.ToString()));
 
                     }
@@ -246,11 +299,11 @@ namespace Amoba
 
             while (ujertek == ertek)
             {
-                if (!(s >= 0 && s < meret && o >= 0 && o < meret)) return;
+                if (!(s >= 0 && s < meret && o >= 0 && o < meret)) break;
                 cellak[s, o].BackColor = Color.Red;
                 s = s + ellS;
                 o = o + ellO;
-                if (!(s >= 0 && s < meret && o >= 0 && o < meret)) return;
+                if (!(s >= 0 && s < meret && o >= 0 && o < meret)) break;
                 ujertek = Convert.ToInt32(cellak[s, o].Tag.ToString().Split('_')[2]);
                 /*
                 cellaszinez(s, o, ertek, irany);
@@ -265,11 +318,12 @@ namespace Amoba
             ujertek = ertek;
             while (ujertek == ertek)
             {
-                if (!(s >= 0 && s < meret && o >= 0 && o < meret)) return;
+                if (!(s >= 0 && s < meret && o >= 0 && o < meret)) break;
                 if (Convert.ToInt32(cellak[s, o].Tag.ToString().Split('_')[2]) == ertek)
                 cellak[s, o].BackColor = Color.Red;
                 s = s + ellS;
                 o = o + ellO;
+                if (!(s >= 0 && s < meret && o >= 0 && o < meret)) break;
                 ujertek = Convert.ToInt32(cellak[s, o].Tag.ToString().Split('_')[2]);
                 /*
                 cellaszinez(s, o, ertek, irany);

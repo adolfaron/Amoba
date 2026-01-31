@@ -7,6 +7,10 @@
       "RelativeMoniker": "D:0:0:{EE2EAB6F-EBD1-45F4-B69D-7C6003DC351E}|Amoba\\Amoba.csproj|solutionrelative:amoba\\jatekter1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
+      "AbsoluteMoniker": "D:0:0:{EE2EAB6F-EBD1-45F4-B69D-7C6003DC351E}|Amoba\\Amoba.csproj|c:\\users\\admin\\onedrive - bajai szc t\u00FCrr istv\u00E1n technikum\\\u00F3r\u00E1k\\ikt\\amoba\\amoba\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{EE2EAB6F-EBD1-45F4-B69D-7C6003DC351E}|Amoba\\Amoba.csproj|solutionrelative:amoba\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{EE2EAB6F-EBD1-45F4-B69D-7C6003DC351E}|Amoba\\Amoba.csproj|c:\\users\\admin\\onedrive - bajai szc t\u00FCrr istv\u00E1n technikum\\\u00F3r\u00E1k\\ikt\\amoba\\amoba\\jatekter1.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{EE2EAB6F-EBD1-45F4-B69D-7C6003DC351E}|Amoba\\Amoba.csproj|solutionrelative:amoba\\jatekter1.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
@@ -17,10 +21,6 @@
     {
       "AbsoluteMoniker": "D:0:0:{EE2EAB6F-EBD1-45F4-B69D-7C6003DC351E}|Amoba\\Amoba.csproj|C:\\Users\\Admin\\OneDrive - Bajai SZC T\u00FCrr Istv\u00E1n Technikum\\\u00D3r\u00E1k\\IKT\\Amoba\\amoba\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
       "RelativeMoniker": "D:0:0:{EE2EAB6F-EBD1-45F4-B69D-7C6003DC351E}|Amoba\\Amoba.csproj|solutionrelative:amoba\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{EE2EAB6F-EBD1-45F4-B69D-7C6003DC351E}|Amoba\\Amoba.csproj|c:\\users\\admin\\onedrive - bajai szc t\u00FCrr istv\u00E1n technikum\\\u00F3r\u00E1k\\ikt\\amoba\\amoba\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{EE2EAB6F-EBD1-45F4-B69D-7C6003DC351E}|Amoba\\Amoba.csproj|solutionrelative:amoba\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -30,25 +30,11 @@
       "DocumentGroups": [
         {
           "DockedHeight": 200,
-          "SelectedChildIndex": 3,
+          "SelectedChildIndex": 4,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "jatekter1.Designer.cs",
-              "DocumentMoniker": "C:\\Users\\Admin\\OneDrive - Bajai SZC T\u00FCrr Istv\u00E1n Technikum\\\u00D3r\u00E1k\\IKT\\Amoba\\Amoba\\jatekter1.Designer.cs",
-              "RelativeDocumentMoniker": "Amoba\\jatekter1.Designer.cs",
-              "ToolTip": "C:\\Users\\Admin\\OneDrive - Bajai SZC T\u00FCrr Istv\u00E1n Technikum\\\u00D3r\u00E1k\\IKT\\Amoba\\Amoba\\jatekter1.Designer.cs",
-              "RelativeToolTip": "Amoba\\jatekter1.Designer.cs",
-              "ViewState": "AgIAACEAAAAAUCLTsAPUvyIAAAAPAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-01-29T16:16:29.005Z",
-              "IsPinned": true,
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 3,
               "Title": "jatekter1.cs [Design]",
               "DocumentMoniker": "C:\\Users\\Admin\\OneDrive - Bajai SZC T\u00FCrr Istv\u00E1n Technikum\\\u00D3r\u00E1k\\IKT\\Amoba\\Amoba\\jatekter1.cs",
               "RelativeDocumentMoniker": "Amoba\\jatekter1.cs",
@@ -61,7 +47,24 @@
             },
             {
               "$type": "Bookmark",
+              "Name": "ST:0:0:{1c4feeaa-4718-4aa9-859d-94ce25d182ba}"
+            },
+            {
+              "$type": "Bookmark",
               "Name": "ST:0:0:{b1e99781-ab81-11d0-b683-00aa00a3ee26}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "jatekter1.Designer.cs",
+              "DocumentMoniker": "C:\\Users\\Admin\\OneDrive - Bajai SZC T\u00FCrr Istv\u00E1n Technikum\\\u00D3r\u00E1k\\IKT\\Amoba\\Amoba\\jatekter1.Designer.cs",
+              "RelativeDocumentMoniker": "Amoba\\jatekter1.Designer.cs",
+              "ToolTip": "C:\\Users\\Admin\\OneDrive - Bajai SZC T\u00FCrr Istv\u00E1n Technikum\\\u00D3r\u00E1k\\IKT\\Amoba\\Amoba\\jatekter1.Designer.cs",
+              "RelativeToolTip": "Amoba\\jatekter1.Designer.cs",
+              "ViewState": "AgIAACwAAAAAAAAAAAAcwDUAAAAmAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-01-29T16:16:29.005Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
@@ -71,27 +74,27 @@
               "RelativeDocumentMoniker": "Amoba\\jatekter1.cs",
               "ToolTip": "C:\\Users\\Admin\\OneDrive - Bajai SZC T\u00FCrr Istv\u00E1n Technikum\\\u00D3r\u00E1k\\IKT\\Amoba\\Amoba\\jatekter1.cs",
               "RelativeToolTip": "Amoba\\jatekter1.cs",
-              "ViewState": "AgIAAFcAAAAAAAAAAADwv98AAAAzAAAAAAAAAA==",
+              "ViewState": "AgIAAAYAAAAAAAAAAAAAACsAAAAjAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-01-29T16:16:24.862Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 1,
               "Title": "Form1.cs",
               "DocumentMoniker": "C:\\Users\\Admin\\OneDrive - Bajai SZC T\u00FCrr Istv\u00E1n Technikum\\\u00D3r\u00E1k\\IKT\\Amoba\\Amoba\\Form1.cs",
               "RelativeDocumentMoniker": "Amoba\\Form1.cs",
               "ToolTip": "C:\\Users\\Admin\\OneDrive - Bajai SZC T\u00FCrr Istv\u00E1n Technikum\\\u00D3r\u00E1k\\IKT\\Amoba\\Amoba\\Form1.cs",
               "RelativeToolTip": "Amoba\\Form1.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAAUAAAAAAAAAAAA2wA4AAAANAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-01-29T16:15:36.635Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 4,
               "Title": "Form1.cs [Design]",
               "DocumentMoniker": "C:\\Users\\Admin\\OneDrive - Bajai SZC T\u00FCrr Istv\u00E1n Technikum\\\u00D3r\u00E1k\\IKT\\Amoba\\Amoba\\Form1.cs",
               "RelativeDocumentMoniker": "Amoba\\Form1.cs",

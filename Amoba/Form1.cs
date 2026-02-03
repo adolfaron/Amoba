@@ -3,8 +3,8 @@ namespace Amoba
     public partial class Form1 : Form
     {
         int meret = 30;
-        int jatekosSzam = 2;
-        List<string> jatekosNevek = new List<string> { "Üres", "Kör", "X" };
+        int jatekosSzam =2;
+        List<string> jatekosNevek = new List<string> { "Üres", "Kör", "X" , "Háromszög"};
         public Form1()
         {
             InitializeComponent();

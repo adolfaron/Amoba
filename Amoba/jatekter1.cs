@@ -105,22 +105,60 @@ namespace Amoba
 
         private void elhelyezesSzamol()
         {
-            
+            if (kovJatekosMutat == null ||
+                kovJatekosMutatKep == null ||
+                jatekosok == null ||
+                cellak == null)
+                return;
             cellameret = (int)(this.ClientSize.Width * (2.0 / 3.0) / meret);
-            this.Height = 2 * elhagyas + (cellameret + koz) * meret+2*cellameret;
-            kovJatekosMutat.Location = new Point((this.ClientSize.Width - (2 * elhagyas + (cellameret + koz) * meret)) / 2 + (2 * elhagyas + (cellameret + koz) * meret) - kovJatekosMutat.Width / 2, elhagyas);
-            kovJatekosMutatKep.Location = new Point((this.ClientSize.Width - (2 * elhagyas + (cellameret + koz) * meret)) / 2 + (2 * elhagyas + (cellameret + koz) * meret) - kovJatekosMutatKep.Width / 2, elhagyas*3+ kovJatekosMutat.Height+ jatekosok.Height);
-            jatekosok.Location = new Point((this.ClientSize.Width - (2 * elhagyas + (cellameret + koz) * meret)) / 2 + (2 * elhagyas + (cellameret + koz) * meret) - jatekosok.Width / 2, elhagyas*2+ kovJatekosMutat.Height);            
+            int cellakSzelesseg = 2 * elhagyas + (cellameret + koz) * meret;
+            int maradek = this.ClientSize.Width - cellakSzelesseg;
+            int width = this.ClientSize.Width;
+            this.Height = cellakSzelesseg+elhagyas*2;
+            if (kovJatekosMutat.Width > maradek)
+            {
+                kovJatekosMutat.Width = maradek-2*elhagyas;
+            }
+            if (kovJatekosMutatKep.Width > maradek) 
+            {
+                kovJatekosMutatKep.Width = maradek - 2 * elhagyas;
+            }
+            if (jatekosok.Width > maradek)
+            {
+                jatekosok.Width = maradek - 2 * elhagyas;
+            }
+            kovJatekosMutat.Location =
+                new Point(
+                    (width - cellakSzelesseg) / 2 + cellakSzelesseg - kovJatekosMutat.Width / 2,
+                    elhagyas
+                );
+
+            kovJatekosMutatKep.Location =
+                new Point(
+                    (width - cellakSzelesseg) / 2 + cellakSzelesseg - kovJatekosMutatKep.Width / 2,
+                    elhagyas * 3 + kovJatekosMutat.Height + jatekosok.Height
+                );
+
+            jatekosok.Location =
+                new Point(
+                    (width - cellakSzelesseg) / 2 + cellakSzelesseg - jatekosok.Width / 2,
+                    elhagyas * 2 + kovJatekosMutat.Height
+                );
+
             for (int sor = 0; sor < meret; sor++)
             {
                 for (int oszlop = 0; oszlop < meret; oszlop++)
                 {
                     PictureBox cella = cellak[sor, oszlop];
                     cella.Size = new Size(cellameret, cellameret);
-                    cella.Location = new Point(oszlop * (cella.Size.Width + koz) + elhagyas, sor * (cella.Size.Height + koz) + elhagyas);
+                    cella.Location = new Point(
+                        oszlop * (cellameret + koz) + elhagyas,
+                        sor * (cellameret + koz) + elhagyas
+                    );
                 }
             }
         }
+
 
         private void cekkaKatt(object sender, EventArgs e)
         {

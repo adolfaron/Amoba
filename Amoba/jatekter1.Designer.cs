@@ -34,24 +34,24 @@ namespace Amoba
             // 
             // kiir
             // 
-            kiir.Location = new Point(783, 12);
+            kiir.Location = new Point(548, 7);
+            kiir.Margin = new Padding(2, 2, 2, 2);
             kiir.Name = "kiir";
-            kiir.Size = new Size(468, 448);
+            kiir.Size = new Size(329, 270);
             kiir.TabIndex = 0;
             kiir.Text = "";
             kiir.Visible = false;
             // 
             // jatekter1
             // 
-            AutoScaleDimensions = new SizeF(10F, 25F);
+            AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1263, 1050);
+            ClientSize = new Size(884, 529);
             Controls.Add(kiir);
-            Margin = new Padding(4, 5, 4, 5);
             Name = "jatekter1";
             Text = "jatekter1";
             Load += jatekter1_Load;
-            this.Resize += new System.EventHandler(this.meretez);
+            Resize += meretez;
             ResumeLayout(false);
         }
 

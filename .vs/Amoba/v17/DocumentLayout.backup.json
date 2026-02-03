@@ -1,26 +1,30 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "C:\\Users\\Admin\\OneDrive - Bajai SZC T\u00FCrr Istv\u00E1n Technikum\\\u00D3r\u00E1k\\IKT\\Amoba\\",
+  "WorkspaceRootPath": "D:\\A\u00C1\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{EE2EAB6F-EBD1-45F4-B69D-7C6003DC351E}|Amoba\\Amoba.csproj|c:\\users\\admin\\onedrive - bajai szc t\u00FCrr istv\u00E1n technikum\\\u00F3r\u00E1k\\ikt\\amoba\\amoba\\jatekter1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{EE2EAB6F-EBD1-45F4-B69D-7C6003DC351E}|Amoba\\Amoba.csproj|solutionrelative:amoba\\jatekter1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{EE2EAB6F-EBD1-45F4-B69D-7C6003DC351E}|Amoba\\Amoba.csproj|c:\\users\\admin\\onedrive - bajai szc t\u00FCrr istv\u00E1n technikum\\\u00F3r\u00E1k\\ikt\\amoba\\amoba\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{EE2EAB6F-EBD1-45F4-B69D-7C6003DC351E}|Amoba\\Amoba.csproj|d:\\a\u00E1\\amoba\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{EE2EAB6F-EBD1-45F4-B69D-7C6003DC351E}|Amoba\\Amoba.csproj|solutionrelative:amoba\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{EE2EAB6F-EBD1-45F4-B69D-7C6003DC351E}|Amoba\\Amoba.csproj|c:\\users\\admin\\onedrive - bajai szc t\u00FCrr istv\u00E1n technikum\\\u00F3r\u00E1k\\ikt\\amoba\\amoba\\jatekter1.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{EE2EAB6F-EBD1-45F4-B69D-7C6003DC351E}|Amoba\\Amoba.csproj|D:\\A\u00C1\\amoba\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{EE2EAB6F-EBD1-45F4-B69D-7C6003DC351E}|Amoba\\Amoba.csproj|solutionrelative:amoba\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{EE2EAB6F-EBD1-45F4-B69D-7C6003DC351E}|Amoba\\Amoba.csproj|d:\\a\u00E1\\amoba\\jatekter1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{EE2EAB6F-EBD1-45F4-B69D-7C6003DC351E}|Amoba\\Amoba.csproj|solutionrelative:amoba\\jatekter1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{EE2EAB6F-EBD1-45F4-B69D-7C6003DC351E}|Amoba\\Amoba.csproj|d:\\a\u00E1\\amoba\\jatekter1.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{EE2EAB6F-EBD1-45F4-B69D-7C6003DC351E}|Amoba\\Amoba.csproj|solutionrelative:amoba\\jatekter1.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{EE2EAB6F-EBD1-45F4-B69D-7C6003DC351E}|Amoba\\Amoba.csproj|C:\\Users\\Admin\\OneDrive - Bajai SZC T\u00FCrr Istv\u00E1n Technikum\\\u00D3r\u00E1k\\IKT\\Amoba\\amoba\\jatekter1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{EE2EAB6F-EBD1-45F4-B69D-7C6003DC351E}|Amoba\\Amoba.csproj|solutionrelative:amoba\\jatekter1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+      "AbsoluteMoniker": "D:0:0:{EE2EAB6F-EBD1-45F4-B69D-7C6003DC351E}|Amoba\\Amoba.csproj|d:\\a\u00E1\\amoba\\form1.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{EE2EAB6F-EBD1-45F4-B69D-7C6003DC351E}|Amoba\\Amoba.csproj|solutionrelative:amoba\\form1.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{EE2EAB6F-EBD1-45F4-B69D-7C6003DC351E}|Amoba\\Amoba.csproj|C:\\Users\\Admin\\OneDrive - Bajai SZC T\u00FCrr Istv\u00E1n Technikum\\\u00D3r\u00E1k\\IKT\\Amoba\\amoba\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{EE2EAB6F-EBD1-45F4-B69D-7C6003DC351E}|Amoba\\Amoba.csproj|solutionrelative:amoba\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+      "AbsoluteMoniker": "D:0:0:{EE2EAB6F-EBD1-45F4-B69D-7C6003DC351E}|Amoba\\Amoba.csproj|D:\\A\u00C1\\amoba\\jatekter1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{EE2EAB6F-EBD1-45F4-B69D-7C6003DC351E}|Amoba\\Amoba.csproj|solutionrelative:amoba\\jatekter1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     }
   ],
   "DocumentGroupContainers": [
@@ -30,20 +34,37 @@
       "DocumentGroups": [
         {
           "DockedHeight": 200,
-          "SelectedChildIndex": 4,
+          "SelectedChildIndex": 7,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 5,
               "Title": "jatekter1.cs [Design]",
-              "DocumentMoniker": "C:\\Users\\Admin\\OneDrive - Bajai SZC T\u00FCrr Istv\u00E1n Technikum\\\u00D3r\u00E1k\\IKT\\Amoba\\Amoba\\jatekter1.cs",
+              "DocumentMoniker": "D:\\A\u00C1\\Amoba\\jatekter1.cs",
               "RelativeDocumentMoniker": "Amoba\\jatekter1.cs",
-              "ToolTip": "C:\\Users\\Admin\\OneDrive - Bajai SZC T\u00FCrr Istv\u00E1n Technikum\\\u00D3r\u00E1k\\IKT\\Amoba\\Amoba\\jatekter1.cs [Design]",
+              "ToolTip": "D:\\A\u00C1\\Amoba\\jatekter1.cs [Design]",
               "RelativeToolTip": "Amoba\\jatekter1.cs [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-01-29T16:16:21.293Z",
               "IsPinned": true,
               "EditorCaption": " [Design]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "Form1.Designer.cs",
+              "DocumentMoniker": "D:\\A\u00C1\\Amoba\\Form1.Designer.cs",
+              "RelativeDocumentMoniker": "Amoba\\Form1.Designer.cs",
+              "ToolTip": "D:\\A\u00C1\\Amoba\\Form1.Designer.cs",
+              "RelativeToolTip": "Amoba\\Form1.Designer.cs",
+              "ViewState": "AgIAACsAAAAAAAAAAAAswDIAAAAoAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-03T11:26:11.657Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{cce594b6-0c39-4442-ba28-10c64ac7e89f}"
             },
             {
               "$type": "Bookmark",
@@ -55,52 +76,54 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 3,
               "Title": "jatekter1.Designer.cs",
-              "DocumentMoniker": "C:\\Users\\Admin\\OneDrive - Bajai SZC T\u00FCrr Istv\u00E1n Technikum\\\u00D3r\u00E1k\\IKT\\Amoba\\Amoba\\jatekter1.Designer.cs",
+              "DocumentMoniker": "D:\\A\u00C1\\Amoba\\jatekter1.Designer.cs",
               "RelativeDocumentMoniker": "Amoba\\jatekter1.Designer.cs",
-              "ToolTip": "C:\\Users\\Admin\\OneDrive - Bajai SZC T\u00FCrr Istv\u00E1n Technikum\\\u00D3r\u00E1k\\IKT\\Amoba\\Amoba\\jatekter1.Designer.cs",
+              "ToolTip": "D:\\A\u00C1\\Amoba\\jatekter1.Designer.cs",
               "RelativeToolTip": "Amoba\\jatekter1.Designer.cs",
-              "ViewState": "AgIAACAAAAAAAAAAAAAcwDUAAAAmAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAIAAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-01-29T16:16:29.005Z"
+              "WhenOpened": "2026-01-29T16:16:29.005Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 2,
               "Title": "jatekter1.cs",
-              "DocumentMoniker": "C:\\Users\\Admin\\OneDrive - Bajai SZC T\u00FCrr Istv\u00E1n Technikum\\\u00D3r\u00E1k\\IKT\\Amoba\\Amoba\\jatekter1.cs",
+              "DocumentMoniker": "D:\\A\u00C1\\Amoba\\jatekter1.cs",
               "RelativeDocumentMoniker": "Amoba\\jatekter1.cs",
-              "ToolTip": "C:\\Users\\Admin\\OneDrive - Bajai SZC T\u00FCrr Istv\u00E1n Technikum\\\u00D3r\u00E1k\\IKT\\Amoba\\Amoba\\jatekter1.cs",
+              "ToolTip": "D:\\A\u00C1\\Amoba\\jatekter1.cs",
               "RelativeToolTip": "Amoba\\jatekter1.cs",
-              "ViewState": "AgIAADwAAAAAAAAAAAAmwEYAAAAnAAAAAAAAAA==",
+              "ViewState": "AgIAABwAAAAAAAAAAAAAACsAAAAaAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-01-29T16:16:24.862Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 0,
               "Title": "Form1.cs",
-              "DocumentMoniker": "C:\\Users\\Admin\\OneDrive - Bajai SZC T\u00FCrr Istv\u00E1n Technikum\\\u00D3r\u00E1k\\IKT\\Amoba\\Amoba\\Form1.cs",
+              "DocumentMoniker": "D:\\A\u00C1\\Amoba\\Form1.cs",
               "RelativeDocumentMoniker": "Amoba\\Form1.cs",
-              "ToolTip": "C:\\Users\\Admin\\OneDrive - Bajai SZC T\u00FCrr Istv\u00E1n Technikum\\\u00D3r\u00E1k\\IKT\\Amoba\\Amoba\\Form1.cs",
+              "ToolTip": "D:\\A\u00C1\\Amoba\\Form1.cs",
               "RelativeToolTip": "Amoba\\Form1.cs",
-              "ViewState": "AgIAAAEAAAAAAAAAAAAIwA0AAAAJAAAAAAAAAA==",
+              "ViewState": "AgIAABUAAAAAAAAAAAAIwFEAAAANAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-01-29T16:15:36.635Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 1,
               "Title": "Form1.cs [Design]",
-              "DocumentMoniker": "C:\\Users\\Admin\\OneDrive - Bajai SZC T\u00FCrr Istv\u00E1n Technikum\\\u00D3r\u00E1k\\IKT\\Amoba\\Amoba\\Form1.cs",
+              "DocumentMoniker": "D:\\A\u00C1\\Amoba\\Form1.cs",
               "RelativeDocumentMoniker": "Amoba\\Form1.cs",
-              "ToolTip": "C:\\Users\\Admin\\OneDrive - Bajai SZC T\u00FCrr Istv\u00E1n Technikum\\\u00D3r\u00E1k\\IKT\\Amoba\\Amoba\\Form1.cs [Design]",
+              "ToolTip": "D:\\A\u00C1\\Amoba\\Form1.cs [Design]",
               "RelativeToolTip": "Amoba\\Form1.cs [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-01-27T18:11:55.763Z"
+              "WhenOpened": "2026-01-27T18:11:55.763Z",
+              "EditorCaption": " [Design]"
             }
           ]
         }

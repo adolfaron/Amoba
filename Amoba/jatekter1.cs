@@ -16,7 +16,7 @@ namespace Amoba
     {
         int meret = 30;
         int jatekosSzam = 2;
-        List<string> jatekosNevek =new List<string> { "Üres", "Kör", "X"};
+        List<string> jatekosNevek = new List<string> { "Üres", "Kör", "X" };
 
         int cellameret;
         int elhagyas = 12;
@@ -27,19 +27,22 @@ namespace Amoba
         ListBox jatekosok;
 
         PictureBox kovJatekosMutatKep;
-        List<string> kepek = new List<string> { "img/ures.png", "img/kor.png", "img/x.png", "img/haromszog.png" };
+        List<string> kepekUt = new List<string> { "img/ures.png", "img/kor.png", "img/x.png", "img/haromszog.png" };
         List<string> ellenorizve = new List<string>();
         List<string> ellenorizveSzin = new List<string>();
         string kattintottKord = "-1_-1";
-        int kiJon = 0;        
+        int kiJon = 0;
+        List<Image> kepek = new List<Image>();
 
         int[] iranyDb = new int[] { 1, 1, 1, 1 };//függőleges, jobb föl átló, vízszintes, jobb le átló
         //föl, Jobb föl, jobb, jobb le, le, bal le,                     bal, bal föl
         int[] iranyDbSzin = new int[] { 1, 1, 1, 1 };
 
         string[] iranyOK = new string[] { "-1_0", "-1_1", "0_1", "1_1", "1_0" , "1_-1" , "0_-1" , "-1_-1" };
-        public jatekter1(int ujMeret, int Ujjatekosszam, List<string> ujNevek)
+        public jatekter1(int ujMeret, int Ujjatekosszam, List<string> ujNevek, List<Image> ujkepek)
         {
+            kepek.Clear();
+            kepek = ujkepek;
             InitializeComponent();
             meret = ujMeret;
             jatekosSzam = Ujjatekosszam;
@@ -73,7 +76,7 @@ namespace Amoba
             };
             kovJatekosMutatKep = new PictureBox()
             {
-                Image = Image.FromFile(kepek[1]),
+                Image = kepek[1],
                 Size = new Size(50, 50),
                 SizeMode = PictureBoxSizeMode.StretchImage,
             };
@@ -98,7 +101,7 @@ namespace Amoba
             elhelyezesSzamol();
             kiJon = 1;
             //kovJatekosMutat.Text = "Következő játékos:\n" + jatekosNevek[kiJon];
-            kovJatekosMutatKep.Image = Image.FromFile(kepek[kiJon]);
+            kovJatekosMutatKep.Image = kepek[kiJon];
             jatekosok.SelectedIndex = kiJon - 1;
 
         }
@@ -168,7 +171,7 @@ namespace Amoba
             int ertek = Convert.ToInt32(kattintott.Tag.ToString().Split('_')[2]);
             if (ertek != 0)
                 return;
-            kattintott.Image = Image.FromFile(kepek[kiJon]);
+            kattintott.Image = kepek[kiJon];
             ertek = kiJon;
             kattintott.Tag = $"{sor}_{oszlop}_{ertek}";
             kattintottKord = $"{sor}_{oszlop}";
@@ -179,7 +182,7 @@ namespace Amoba
             }
             //kovJatekosMutat.Text = "Következő játékos:\n" + jatekosNevek[kiJon];
             jatekosok.SelectedIndex = kiJon-1;
-            kovJatekosMutatKep.Image = Image.FromFile(kepek[kiJon]);
+            kovJatekosMutatKep.Image = kepek[kiJon];
 
             //MessageBox.Show("irányok: " + string.Join(", ", iranyDb)+"\n");
             kiir.Clear();

@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             button1 = new Button();
-            ujJatekos = new Button();
+            ujJatekosBTN = new Button();
             SuspendLayout();
             // 
             // button1
@@ -42,22 +42,22 @@
             button1.UseVisualStyleBackColor = true;
             button1.Click += button1_Click;
             // 
-            // ujJatekos
+            // ujJatekosBTN
             // 
-            ujJatekos.Location = new Point(386, 195);
-            ujJatekos.Name = "ujJatekos";
-            ujJatekos.Size = new Size(75, 23);
-            ujJatekos.TabIndex = 1;
-            ujJatekos.Text = "Új játékos";
-            ujJatekos.UseVisualStyleBackColor = true;
-            ujJatekos.Click += ujJatekos_Click;
+            ujJatekosBTN.Location = new Point(386, 195);
+            ujJatekosBTN.Name = "ujJatekosBTN";
+            ujJatekosBTN.Size = new Size(75, 23);
+            ujJatekosBTN.TabIndex = 1;
+            ujJatekosBTN.Text = "Új játékos";
+            ujJatekosBTN.UseVisualStyleBackColor = true;
+            ujJatekosBTN.Click += ujJatekos_Click;
             // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 450);
-            Controls.Add(ujJatekos);
+            Controls.Add(ujJatekosBTN);
             Controls.Add(button1);
             Name = "Form1";
             Text = "Amőba";
@@ -67,6 +67,6 @@
         #endregion
 
         private Button button1;
-        private Button ujJatekos;
+        private Button ujJatekosBTN;
     }
 }

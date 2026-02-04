@@ -7,6 +7,7 @@ namespace Amoba
         List<string> jatekosNevek = new List<string> { "Üres", "Kör", "X", "Háromszög" };
         List<string> kepekUt = new List<string> { "img/ures.png", "img/kor.png", "img/x.png", "img/haromszog.png" };
         List<Color> szinek = new List<Color> { Color.White, Color.Blue, Color.Yellow, Color.YellowGreen };
+        ListBox jatekosok = new ListBox();
         List<Image> kepek = new List<Image>();
         public Form1()
         {
@@ -74,12 +75,16 @@ namespace Amoba
 
         private void ujJatekos_Click(object sender, EventArgs e)
         {
-            ColorDialog szinValaszto = new ColorDialog();
-            if (szinValaszto.ShowDialog() == DialogResult.OK)
+            skinek ablak = new skinek();
+
+            if (ablak.ShowDialog() == DialogResult.OK)
             {
-                Color valasztottSzin = szinValaszto.Color;
-                // Ezt elmentheted a játékos színlistájába
+                ujJatekos(ablak.JatekosNev, ablak.ValasztottSzin);
             }
+        }
+        public void ujJatekos(string nev, Color szin)
+        {
+            MessageBox.Show(nev+ szin.ToString());
         }
     }
 }

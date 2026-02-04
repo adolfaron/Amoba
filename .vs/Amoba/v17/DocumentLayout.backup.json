@@ -1,30 +1,38 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "D:\\A\u00C1\\",
+  "WorkspaceRootPath": "C:\\Users\\banhidialex\\source\\repos\\Amoba\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{EE2EAB6F-EBD1-45F4-B69D-7C6003DC351E}|Amoba\\Amoba.csproj|d:\\a\u00E1\\amoba\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{EE2EAB6F-EBD1-45F4-B69D-7C6003DC351E}|Amoba\\Amoba.csproj|c:\\users\\banhidialex\\source\\repos\\amoba\\amoba\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{EE2EAB6F-EBD1-45F4-B69D-7C6003DC351E}|Amoba\\Amoba.csproj|solutionrelative:amoba\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{EE2EAB6F-EBD1-45F4-B69D-7C6003DC351E}|Amoba\\Amoba.csproj|D:\\A\u00C1\\amoba\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{EE2EAB6F-EBD1-45F4-B69D-7C6003DC351E}|Amoba\\Amoba.csproj|solutionrelative:amoba\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+      "AbsoluteMoniker": "D:0:0:{EE2EAB6F-EBD1-45F4-B69D-7C6003DC351E}|Amoba\\Amoba.csproj|c:\\users\\banhidialex\\source\\repos\\amoba\\amoba\\skinek.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{EE2EAB6F-EBD1-45F4-B69D-7C6003DC351E}|Amoba\\Amoba.csproj|solutionrelative:amoba\\skinek.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{EE2EAB6F-EBD1-45F4-B69D-7C6003DC351E}|Amoba\\Amoba.csproj|d:\\a\u00E1\\amoba\\jatekter1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{EE2EAB6F-EBD1-45F4-B69D-7C6003DC351E}|Amoba\\Amoba.csproj|solutionrelative:amoba\\jatekter1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{EE2EAB6F-EBD1-45F4-B69D-7C6003DC351E}|Amoba\\Amoba.csproj|d:\\a\u00E1\\amoba\\jatekter1.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{EE2EAB6F-EBD1-45F4-B69D-7C6003DC351E}|Amoba\\Amoba.csproj|solutionrelative:amoba\\jatekter1.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{EE2EAB6F-EBD1-45F4-B69D-7C6003DC351E}|Amoba\\Amoba.csproj|d:\\a\u00E1\\amoba\\form1.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{EE2EAB6F-EBD1-45F4-B69D-7C6003DC351E}|Amoba\\Amoba.csproj|c:\\users\\banhidialex\\source\\repos\\amoba\\amoba\\form1.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{EE2EAB6F-EBD1-45F4-B69D-7C6003DC351E}|Amoba\\Amoba.csproj|solutionrelative:amoba\\form1.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{EE2EAB6F-EBD1-45F4-B69D-7C6003DC351E}|Amoba\\Amoba.csproj|D:\\A\u00C1\\amoba\\jatekter1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "AbsoluteMoniker": "D:0:0:{EE2EAB6F-EBD1-45F4-B69D-7C6003DC351E}|Amoba\\Amoba.csproj|C:\\Users\\banhidialex\\source\\repos\\Amoba\\amoba\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{EE2EAB6F-EBD1-45F4-B69D-7C6003DC351E}|Amoba\\Amoba.csproj|solutionrelative:amoba\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{EE2EAB6F-EBD1-45F4-B69D-7C6003DC351E}|Amoba\\Amoba.csproj|C:\\Users\\banhidialex\\source\\repos\\Amoba\\amoba\\jatekter1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
       "RelativeMoniker": "D:0:0:{EE2EAB6F-EBD1-45F4-B69D-7C6003DC351E}|Amoba\\Amoba.csproj|solutionrelative:amoba\\jatekter1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{EE2EAB6F-EBD1-45F4-B69D-7C6003DC351E}|Amoba\\Amoba.csproj|c:\\users\\banhidialex\\source\\repos\\amoba\\amoba\\skinek.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{EE2EAB6F-EBD1-45F4-B69D-7C6003DC351E}|Amoba\\Amoba.csproj|solutionrelative:amoba\\skinek.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{EE2EAB6F-EBD1-45F4-B69D-7C6003DC351E}|Amoba\\Amoba.csproj|c:\\users\\banhidialex\\source\\repos\\amoba\\amoba\\jatekter1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{EE2EAB6F-EBD1-45F4-B69D-7C6003DC351E}|Amoba\\Amoba.csproj|solutionrelative:amoba\\jatekter1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{EE2EAB6F-EBD1-45F4-B69D-7C6003DC351E}|Amoba\\Amoba.csproj|c:\\users\\banhidialex\\source\\repos\\amoba\\amoba\\jatekter1.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{EE2EAB6F-EBD1-45F4-B69D-7C6003DC351E}|Amoba\\Amoba.csproj|solutionrelative:amoba\\jatekter1.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -34,37 +42,20 @@
       "DocumentGroups": [
         {
           "DockedHeight": 200,
-          "SelectedChildIndex": 7,
+          "SelectedChildIndex": 3,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 4,
               "Title": "jatekter1.cs [Design]",
-              "DocumentMoniker": "D:\\A\u00C1\\Amoba\\jatekter1.cs",
+              "DocumentMoniker": "C:\\Users\\banhidialex\\source\\repos\\Amoba\\Amoba\\jatekter1.cs",
               "RelativeDocumentMoniker": "Amoba\\jatekter1.cs",
-              "ToolTip": "D:\\A\u00C1\\Amoba\\jatekter1.cs [Design]",
+              "ToolTip": "C:\\Users\\banhidialex\\source\\repos\\Amoba\\Amoba\\jatekter1.cs [Design]",
               "RelativeToolTip": "Amoba\\jatekter1.cs [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-01-29T16:16:21.293Z",
               "IsPinned": true,
               "EditorCaption": " [Design]"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "Form1.Designer.cs",
-              "DocumentMoniker": "D:\\A\u00C1\\Amoba\\Form1.Designer.cs",
-              "RelativeDocumentMoniker": "Amoba\\Form1.Designer.cs",
-              "ToolTip": "D:\\A\u00C1\\Amoba\\Form1.Designer.cs",
-              "RelativeToolTip": "Amoba\\Form1.Designer.cs",
-              "ViewState": "AgIAACsAAAAAAAAAAAAswDIAAAAoAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-02-03T11:26:11.657Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Bookmark",
-              "Name": "ST:0:0:{cce594b6-0c39-4442-ba28-10c64ac7e89f}"
             },
             {
               "$type": "Bookmark",
@@ -76,24 +67,62 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "jatekter1.Designer.cs",
-              "DocumentMoniker": "D:\\A\u00C1\\Amoba\\jatekter1.Designer.cs",
-              "RelativeDocumentMoniker": "Amoba\\jatekter1.Designer.cs",
-              "ToolTip": "D:\\A\u00C1\\Amoba\\jatekter1.Designer.cs",
-              "RelativeToolTip": "Amoba\\jatekter1.Designer.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAIAAAABAAAAAAAAAA==",
+              "DocumentIndex": 0,
+              "Title": "Form1.cs",
+              "DocumentMoniker": "C:\\Users\\banhidialex\\source\\repos\\Amoba\\Amoba\\Form1.cs",
+              "RelativeDocumentMoniker": "Amoba\\Form1.cs",
+              "ToolTip": "C:\\Users\\banhidialex\\source\\repos\\Amoba\\Amoba\\Form1.cs",
+              "RelativeToolTip": "Amoba\\Form1.cs",
+              "ViewState": "AgIAAD4AAAAAAAAAAAAIwFIAAAANAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-01-29T16:16:29.005Z",
+              "WhenOpened": "2026-01-29T16:15:36.635Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 2,
+              "Title": "Form1.Designer.cs",
+              "DocumentMoniker": "C:\\Users\\banhidialex\\source\\repos\\Amoba\\Amoba\\Form1.Designer.cs",
+              "RelativeDocumentMoniker": "Amoba\\Form1.Designer.cs",
+              "ToolTip": "C:\\Users\\banhidialex\\source\\repos\\Amoba\\Amoba\\Form1.Designer.cs",
+              "RelativeToolTip": "Amoba\\Form1.Designer.cs",
+              "ViewState": "AgIAACgAAAAAAAAAAAAmwDQAAAArAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-03T11:26:11.657Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "skinek.cs",
+              "DocumentMoniker": "C:\\Users\\banhidialex\\source\\repos\\Amoba\\Amoba\\skinek.cs",
+              "RelativeDocumentMoniker": "Amoba\\skinek.cs",
+              "ToolTip": "C:\\Users\\banhidialex\\source\\repos\\Amoba\\Amoba\\skinek.cs",
+              "RelativeToolTip": "Amoba\\skinek.cs",
+              "ViewState": "AgIAAAwAAAAAAAAAAAAuwCcAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-04T08:13:39.694Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "skinek.cs [Design]",
+              "DocumentMoniker": "C:\\Users\\banhidialex\\source\\repos\\Amoba\\Amoba\\skinek.cs",
+              "RelativeDocumentMoniker": "Amoba\\skinek.cs",
+              "ToolTip": "C:\\Users\\banhidialex\\source\\repos\\Amoba\\Amoba\\skinek.cs [Design]",
+              "RelativeToolTip": "Amoba\\skinek.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-04T08:07:36.554Z",
+              "EditorCaption": " [Design]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
               "Title": "jatekter1.cs",
-              "DocumentMoniker": "D:\\A\u00C1\\Amoba\\jatekter1.cs",
+              "DocumentMoniker": "C:\\Users\\banhidialex\\source\\repos\\Amoba\\Amoba\\jatekter1.cs",
               "RelativeDocumentMoniker": "Amoba\\jatekter1.cs",
-              "ToolTip": "D:\\A\u00C1\\Amoba\\jatekter1.cs",
+              "ToolTip": "C:\\Users\\banhidialex\\source\\repos\\Amoba\\Amoba\\jatekter1.cs",
               "RelativeToolTip": "Amoba\\jatekter1.cs",
               "ViewState": "AgIAABwAAAAAAAAAAAAAACsAAAAaAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
@@ -102,28 +131,28 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "Form1.cs",
-              "DocumentMoniker": "D:\\A\u00C1\\Amoba\\Form1.cs",
-              "RelativeDocumentMoniker": "Amoba\\Form1.cs",
-              "ToolTip": "D:\\A\u00C1\\Amoba\\Form1.cs",
-              "RelativeToolTip": "Amoba\\Form1.cs",
-              "ViewState": "AgIAABUAAAAAAAAAAAAIwFEAAAANAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-01-29T16:15:36.635Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 3,
               "Title": "Form1.cs [Design]",
-              "DocumentMoniker": "D:\\A\u00C1\\Amoba\\Form1.cs",
+              "DocumentMoniker": "C:\\Users\\banhidialex\\source\\repos\\Amoba\\Amoba\\Form1.cs",
               "RelativeDocumentMoniker": "Amoba\\Form1.cs",
-              "ToolTip": "D:\\A\u00C1\\Amoba\\Form1.cs [Design]",
+              "ToolTip": "C:\\Users\\banhidialex\\source\\repos\\Amoba\\Amoba\\Form1.cs [Design]",
               "RelativeToolTip": "Amoba\\Form1.cs [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-01-27T18:11:55.763Z",
               "EditorCaption": " [Design]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "jatekter1.Designer.cs",
+              "DocumentMoniker": "C:\\Users\\banhidialex\\source\\repos\\Amoba\\Amoba\\jatekter1.Designer.cs",
+              "RelativeDocumentMoniker": "Amoba\\jatekter1.Designer.cs",
+              "ToolTip": "C:\\Users\\banhidialex\\source\\repos\\Amoba\\Amoba\\jatekter1.Designer.cs",
+              "RelativeToolTip": "Amoba\\jatekter1.Designer.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAIAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-01-29T16:16:29.005Z",
+              "EditorCaption": ""
             }
           ]
         }

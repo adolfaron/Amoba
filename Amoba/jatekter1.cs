@@ -27,9 +27,10 @@ namespace Amoba
         ListBox jatekosok;
 
         PictureBox kovJatekosMutatKep;
-        List<string> kepekUt = new List<string> { "img/ures.png", "img/kor.png", "img/x.png", "img/haromszog.png" };
+        //List<string> kepekUt = new List<string> { "img/ures.png", "img/kor.png", "img/x.png", "img/haromszog.png" };
         List<string> ellenorizve = new List<string>();
         List<string> ellenorizveSzin = new List<string>();
+        List<Color> szinek = new List<Color>();
         string kattintottKord = "-1_-1";
         int kiJon = 0;
         List<Image> kepek = new List<Image>();
@@ -39,14 +40,15 @@ namespace Amoba
         int[] iranyDbSzin = new int[] { 1, 1, 1, 1 };
 
         string[] iranyOK = new string[] { "-1_0", "-1_1", "0_1", "1_1", "1_0" , "1_-1" , "0_-1" , "-1_-1" };
-        public jatekter1(int ujMeret, int Ujjatekosszam, List<string> ujNevek, List<Image> ujkepek)
+        public jatekter1(int ujMeret, List<string> ujNevek, List<Image> ujkepek, List<Color> ujSzinek)
         {
             kepek.Clear();
             kepek = ujkepek;
             InitializeComponent();
             meret = ujMeret;
-            jatekosSzam = Ujjatekosszam;
+            jatekosSzam = ujNevek.Count-1;
             jatekosNevek = ujNevek;
+            szinek = ujSzinek;
             cellak = new PictureBox[meret, meret];
             this.BackColor = Color.White;
             Text = "Amőba";
@@ -63,7 +65,7 @@ namespace Amoba
                     cella.BackColor = Color.LightGray;
                     cella.Location = new Point(oszlop * (cella.Size.Width + koz) + elhagyas, sor * (cella.Size.Height + koz) + elhagyas);
                     this.Controls.Add(cella);
-                    cella.Click += new EventHandler(cekkaKatt);
+                    cella.Click += new (cekkaKatt);
                     cella.SizeMode = PictureBoxSizeMode.StretchImage;
                     cella.Tag = $"{sor}_{oszlop}_0";
                 }
@@ -89,7 +91,9 @@ namespace Amoba
                 ForeColor = Color.Black,
                 Enabled = false,
             };
-            jatekosok.Height = jatekosSzam * 20 + 10;
+            jatekosok.ItemHeight = 40; // vagy a kívánt pixel
+            jatekosok.Height = jatekosSzam * jatekosok.ItemHeight + 2; // 2 pixel keretnek
+
             for (int i = 1; i <= jatekosSzam; i++)
             {
                 jatekosok.Items.Add(jatekosNevek[i]);
@@ -117,7 +121,13 @@ namespace Amoba
             int cellakSzelesseg = 2 * elhagyas + (cellameret + koz) * meret;
             int maradek = this.ClientSize.Width - cellakSzelesseg;
             int width = this.ClientSize.Width;
-            this.Height = cellakSzelesseg+elhagyas*2;
+            //this.Height = cellakSzelesseg+elhagyas*2;
+            //this.ClientSize = new Size(this.Width, this.Height);
+            this.ClientSize = new Size(
+                this.ClientSize.Width,
+                cellakSzelesseg + elhagyas * 2
+            );
+
             if (kovJatekosMutat.Width > maradek)
             {
                 kovJatekosMutat.Width = maradek-2*elhagyas;
@@ -362,7 +372,7 @@ namespace Amoba
             while (ujertek == ertek)
             {
                 if (!(s >= 0 && s < meret && o >= 0 && o < meret)) break;
-                cellak[s, o].BackColor = Color.Red;
+                cellak[s, o].BackColor = vilagosit(szinek[ertek]);
                 s = s + ellS;
                 o = o + ellO;
                 if (!(s >= 0 && s < meret && o >= 0 && o < meret)) break;
@@ -382,7 +392,7 @@ namespace Amoba
             {
                 if (!(s >= 0 && s < meret && o >= 0 && o < meret)) break;
                 if (Convert.ToInt32(cellak[s, o].Tag.ToString().Split('_')[2]) == ertek)
-                cellak[s, o].BackColor = Color.Red;
+                    cellak[s, o].BackColor = vilagosit(szinek[ertek]);
                 s = s + ellS;
                 o = o + ellO;
                 if (!(s >= 0 && s < meret && o >= 0 && o < meret)) break;
@@ -393,6 +403,14 @@ namespace Amoba
                 cellaszinez(s, o, ertek, irany);*/
 
             }
+        }
+
+        private Color vilagosit(Color color)
+        {
+            int r = color.R/2;
+            int g = color.G/2;
+            int b = color.B/2;
+            return Color.FromArgb(r, g, b);
         }
     }
 }

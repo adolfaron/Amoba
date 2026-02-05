@@ -71,3 +71,4 @@ D:\AÁ\Amoba\obj\Debug\net8.0-windows\Amoba.pdb
 D:\AÁ\Amoba\obj\Debug\net8.0-windows\Amoba.genruntimeconfig.cache
 D:\AÁ\Amoba\obj\Debug\net8.0-windows\ref\Amoba.dll
 C:\Users\banhidialex\Source\Repos\Amoba\Amoba\obj\Debug\net8.0-windows\Amoba.skinek.resources
+C:\Users\Admin\OneDrive - Bajai SZC Türr István Technikum\Órák\IKT\Amoba\Amoba\obj\Debug\net8.0-windows\Amoba.skinek.resources

@@ -35,7 +35,7 @@
             // 
             // start
             // 
-            start.Location = new Point(313, 139);
+            start.Location = new Point(313, 151);
             start.Name = "start";
             start.Size = new Size(96, 44);
             start.TabIndex = 0;
@@ -45,7 +45,7 @@
             // 
             // ujJatekosBTN
             // 
-            ujJatekosBTN.Location = new Point(453, 218);
+            ujJatekosBTN.Location = new Point(324, 201);
             ujJatekosBTN.Name = "ujJatekosBTN";
             ujJatekosBTN.Size = new Size(75, 23);
             ujJatekosBTN.TabIndex = 1;

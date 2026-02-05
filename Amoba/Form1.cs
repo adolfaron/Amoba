@@ -174,10 +174,10 @@
             if (keyData == Keys.Enter)
             {
                 start_Click(this, EventArgs.Empty);
-                return true; // ✔ csak az Entert nyeljük le
+                return true;
             }
 
-            return base.ProcessCmdKey(ref msg, keyData); // ✔ minden más megy tovább
+            return base.ProcessCmdKey(ref msg, keyData);
         }
 
 

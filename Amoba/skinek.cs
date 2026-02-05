@@ -49,16 +49,6 @@ namespace Amoba
                 return;
             }
 
-
-
-            // Képek és szöveg tárolása
-            /* List<Tuple<string, Image>> elemek = new List<Tuple<string, Image>>()
-             {
-                 Tuple.Create("X", Image.FromFile("img/x.png")),
-                 Tuple.Create("Kör", Image.FromFile("img/kor.png")),
-                 Tuple.Create("Háromszög", Image.FromFile("img/haromszog.png"))
-             };*/
-
             // Feltöltés a ComboBox-ba
             kepek.Clear();
             foreach (string ut in kepekUt)
@@ -67,6 +57,7 @@ namespace Amoba
                 szimbolum.Items.Add(InvertImage(Image.FromFile(ut)));
             }
             // Rajzolás esemény
+
             szimbolum.DrawItem += (s, e) =>
             {
                 if (e.Index < 0) return;
@@ -74,7 +65,7 @@ namespace Amoba
                 Image img = (Image)szimbolum.Items[e.Index];
 
                 e.DrawBackground();
-                e.Graphics.DrawImage(img, e.Bounds.Left, e.Bounds.Top, 20, 20);
+                e.Graphics.DrawImage(img, e.Bounds.Left, e.Bounds.Top, 40, 40);
                 e.DrawFocusRectangle();
             };
 
@@ -86,8 +77,11 @@ namespace Amoba
             if (szinValaszto.ShowDialog() == DialogResult.OK)
             {
                 ValasztottSzin = szinValaszto.Color;
-                szinKi.BackColor = ValasztottSzin;
+                //szinKi.BackColor = ValasztottSzin;
+                if (szimbolum.SelectedIndex != -1)
+                    jatekosSzimb.Image = Form1.kepSzinez(kepek[szimbolum.SelectedIndex], ValasztottSzin);
                 valasztottSzint = true;
+
 
             }
 
@@ -132,18 +126,23 @@ namespace Amoba
 
             return bmp;
         }
-       
+
         protected override bool ProcessCmdKey(ref Message msg, Keys keyData)
         {
             if (keyData == Keys.Enter)
             {
                 ok_Click(this, EventArgs.Empty);
-                return true; // ✔ csak az Entert nyeljük le
+                return true;
             }
 
-            return base.ProcessCmdKey(ref msg, keyData); // ✔ minden más megy tovább
+            return base.ProcessCmdKey(ref msg, keyData);
         }
 
+        private void szimbolum_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (valasztottSzint)
+                jatekosSzimb.Image = Form1.kepSzinez(kepek[szimbolum.SelectedIndex], ValasztottSzin);
 
+        }
     }
 }

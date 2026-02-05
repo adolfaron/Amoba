@@ -32,10 +32,10 @@
             jatekosNeve = new TextBox();
             label2 = new Label();
             szimbolum = new ComboBox();
-            label3 = new Label();
             szinValasztas = new Button();
             ok = new Button();
-            szinKi = new Panel();
+            jatekosSzimb = new PictureBox();
+            ((System.ComponentModel.ISupportInitialize)jatekosSzimb).BeginInit();
             SuspendLayout();
             // 
             // label1
@@ -51,7 +51,7 @@
             // 
             jatekosNeve.Location = new Point(108, 35);
             jatekosNeve.Name = "jatekosNeve";
-            jatekosNeve.Size = new Size(121, 23);
+            jatekosNeve.Size = new Size(156, 23);
             jatekosNeve.TabIndex = 1;
             // 
             // label2
@@ -68,25 +68,18 @@
             szimbolum.DrawMode = DrawMode.OwnerDrawFixed;
             szimbolum.DropDownStyle = ComboBoxStyle.DropDownList;
             szimbolum.FormattingEnabled = true;
+            szimbolum.ItemHeight = 44;
             szimbolum.Location = new Point(108, 77);
             szimbolum.Name = "szimbolum";
-            szimbolum.Size = new Size(121, 24);
+            szimbolum.Size = new Size(64, 50);
             szimbolum.TabIndex = 3;
-            // 
-            // label3
-            // 
-            label3.AutoSize = true;
-            label3.Location = new Point(23, 121);
-            label3.Name = "label3";
-            label3.Size = new Size(31, 15);
-            label3.TabIndex = 4;
-            label3.Text = "Szín:";
+            szimbolum.SelectedIndexChanged += szimbolum_SelectedIndexChanged;
             // 
             // szinValasztas
             // 
-            szinValasztas.Location = new Point(108, 117);
+            szinValasztas.Location = new Point(178, 77);
             szinValasztas.Name = "szinValasztas";
-            szinValasztas.Size = new Size(121, 23);
+            szinValasztas.Size = new Size(86, 50);
             szinValasztas.TabIndex = 5;
             szinValasztas.Text = "Szín kiválasztása";
             szinValasztas.UseVisualStyleBackColor = true;
@@ -102,23 +95,23 @@
             ok.UseVisualStyleBackColor = true;
             ok.Click += ok_Click;
             // 
-            // szinKi
+            // jatekosSzimb
             // 
-            szinKi.Location = new Point(106, 160);
-            szinKi.Margin = new Padding(2, 2, 2, 2);
-            szinKi.Name = "szinKi";
-            szinKi.Size = new Size(37, 28);
-            szinKi.TabIndex = 7;
+            jatekosSzimb.Location = new Point(108, 137);
+            jatekosSzimb.Name = "jatekosSzimb";
+            jatekosSzimb.Size = new Size(64, 64);
+            jatekosSzimb.SizeMode = PictureBoxSizeMode.StretchImage;
+            jatekosSzimb.TabIndex = 7;
+            jatekosSzimb.TabStop = false;
             // 
             // skinek
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(244, 208);
-            Controls.Add(szinKi);
+            ClientSize = new Size(276, 208);
+            Controls.Add(jatekosSzimb);
             Controls.Add(ok);
             Controls.Add(szinValasztas);
-            Controls.Add(label3);
             Controls.Add(szimbolum);
             Controls.Add(label2);
             Controls.Add(jatekosNeve);
@@ -127,6 +120,7 @@
             MinimizeBox = false;
             Name = "skinek";
             Text = "skinek";
+            ((System.ComponentModel.ISupportInitialize)jatekosSzimb).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -137,9 +131,8 @@
         private TextBox jatekosNeve;
         private Label label2;
         private ComboBox szimbolum;
-        private Label label3;
         private Button szinValasztas;
         private Button ok;
-        private Panel szinKi;
+        private PictureBox jatekosSzimb;
     }
 }

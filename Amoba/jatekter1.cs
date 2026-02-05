@@ -34,6 +34,8 @@ namespace Amoba
         string kattintottKord = "-1_-1";
         int kiJon = 0;
         List<Image> kepek = new List<Image>();
+                List<int> pontszamok = new List<int>();
+
 
         int[] iranyDb = new int[] { 1, 1, 1, 1 };//függőleges, jobb föl átló, vízszintes, jobb le átló
         //föl, Jobb föl, jobb, jobb le, le, bal le,                     bal, bal föl
@@ -53,7 +55,11 @@ namespace Amoba
             this.BackColor = Color.White;
             Text = "Amőba";
             cellameret = (int)(this.ClientSize.Width * (2.0 / 3.0) / meret);
-            
+
+            pontszamok = Enumerable
+                .Repeat(0, jatekosNevek.Count)
+                .ToList();
+
 
             for (int sor = 0; sor < meret; sor++)
             {
@@ -90,14 +96,39 @@ namespace Amoba
                 BackColor = this.BackColor,
                 ForeColor = Color.Black,
                 Enabled = false,
+                
             };
             jatekosok.ItemHeight = 40; // vagy a kívánt pixel
             jatekosok.Height = jatekosSzam * jatekosok.ItemHeight + 2; // 2 pixel keretnek
+            jatekosok.SelectionMode = SelectionMode.One;
+            jatekosok.DrawMode = DrawMode.OwnerDrawFixed;
 
-            for (int i = 1; i <= jatekosSzam; i++)
+            jatekosok.DrawItem += (s, e) =>
             {
-                jatekosok.Items.Add(jatekosNevek[i]);
-            }
+                if (e.Index < 0) return;
+
+                bool kijelolt = (e.State & DrawItemState.Selected) == DrawItemState.Selected;
+
+                Color hatter = kijelolt ? Color.DarkGray : jatekosok.BackColor;
+                Color szoveg = kijelolt ? Color.White : jatekosok.ForeColor;
+
+                using (SolidBrush bg = new SolidBrush(hatter))
+                    e.Graphics.FillRectangle(bg, e.Bounds);
+
+                string szovegTartalom = jatekosok.Items[e.Index].ToString();
+
+                using (SolidBrush fg = new SolidBrush(szoveg))
+                    e.Graphics.DrawString(
+                        szovegTartalom,
+                        e.Font,
+                        fg,
+                        e.Bounds.Left + 6,
+                        e.Bounds.Top + 10
+                    );
+
+                e.DrawFocusRectangle();
+            };
+            jatekosokKiir();
 
             this.Controls.Add(jatekosok);
             this.Controls.Add(kovJatekosMutatKep);
@@ -108,6 +139,17 @@ namespace Amoba
             kovJatekosMutatKep.Image = kepek[kiJon];
             jatekosok.SelectedIndex = kiJon - 1;
 
+        }
+
+        private void jatekosokKiir()
+        {
+            int kival = jatekosok.SelectedIndex;
+            jatekosok.Items.Clear();
+            for (int i = 1; i <= jatekosSzam; i++)
+            {
+                jatekosok.Items.Add(jatekosNevek[i] + ": " + pontszamok[i]);
+            }
+            jatekosok.SelectedIndex = kival;
         }
 
         private void elhelyezesSzamol()
@@ -349,17 +391,14 @@ namespace Amoba
             return iranyOK.ToList().IndexOf(koord);
         }
 
-        private void jatekter1_Load(object sender, EventArgs e)
-        {
-
-        }
-
         private void cellaszinez(int sor, int oszlop, int ertek, string irany)
         {
             if (ellenorizveSzin.Contains(sor + "_" + oszlop))
             {
                 return;
             }
+            pontszamok[ertek] +=1;
+            jatekosokKiir();
             ellenorizveSzin.Add((sor + "_" + oszlop));
             int ellS = Convert.ToInt32(irany.Split('_')[0]);
             int ellO = Convert.ToInt32(irany.Split('_')[1]);

@@ -17,6 +17,8 @@ namespace Amoba
         public skinek(Form1 form1)
         {
             InitializeComponent();
+            this.KeyPreview = true;
+
             foAblak = form1;
 
             string futtatasiMappa = AppDomain.CurrentDomain.BaseDirectory;
@@ -88,7 +90,7 @@ namespace Amoba
                 valasztottSzint = true;
 
             }
-            
+
         }
 
         private void ok_Click(object sender, EventArgs e)
@@ -130,6 +132,18 @@ namespace Amoba
 
             return bmp;
         }
+       
+        protected override bool ProcessCmdKey(ref Message msg, Keys keyData)
+        {
+            if (keyData == Keys.Enter)
+            {
+                ok_Click(this, EventArgs.Empty);
+                return true; // ✔ csak az Entert nyeljük le
+            }
+
+            return base.ProcessCmdKey(ref msg, keyData); // ✔ minden más megy tovább
+        }
+
 
     }
 }

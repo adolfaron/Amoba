@@ -1,13 +1,13 @@
-namespace Amoba
+ï»¿namespace Amoba
 {
     public partial class Form1 : Form
     {
         int meret = 30;
-        //List<string> jatekosNevek = new List<string> { "Üres", "Kör", "X", "Háromszög" };
+        //List<string> jatekosNevek = new List<string> { "Ãœres", "KÃ¶r", "X", "HÃ¡romszÃ¶g" };
         List<List<object>> jatekosok = new List<List<object>>()
         {
-            new List<object> { "Üres", Color.White, Image.FromFile("img/ures.png"), -1},
-            new List<object> { "Kör", Color.Blue, Image.FromFile("img/szimbolumok/1kor.png"), 0 },
+            new List<object> { "Ãœres", Color.White, Image.FromFile("img/ures.png"), -1},
+            new List<object> { "KÃ¶r", Color.Blue, Image.FromFile("img/szimbolumok/1kor.png"), 0 },
             new List<object> { "X", Color.Red, Image.FromFile("img/szimbolumok/2x.png"), 1 }
         };
         //List<string> kepekUt = new List<string> { "img/ures.png", "img/szimbolumok/kor.png", "img/szimbolumok/x.png", "img/szimbolumok/haromszog.png" };
@@ -20,11 +20,11 @@ namespace Amoba
         }
 
 
-        private void button1_Click(object sender, EventArgs e)
+        private void start_Click(object sender, EventArgs e)
         {
             if (jatekosok.Count <= 1)
             {
-                MessageBox.Show("Kérem adjon hozzá játékosokat!");
+                MessageBox.Show("KÃ©rem adjon hozzÃ¡ jÃ¡tÃ©kosokat!");
                 return;
             }
             List<Image> kepek = new List<Image>();
@@ -62,7 +62,7 @@ namespace Amoba
                 {
                     Color c = input.GetPixel(x, y);
 
-                    // Csak ahol nem átlátszó
+                    // Csak ahol nem Ã¡tlÃ¡tszÃ³
                     if (c.A > 0)
                     {
                         float brightness = c.GetBrightness();
@@ -95,7 +95,7 @@ namespace Amoba
         public void ujJatekos(string nev, Color szin, Image kep, int index)
         {
             //MessageBox.Show(index.ToString());
-            // Ha a lista üres, nincs duplikáció
+            // Ha a lista Ã¼res, nincs duplikÃ¡ciÃ³
             if (jatekosok.Count > 0)
             {
                 bool marVan = jatekosok.Any(j =>
@@ -106,15 +106,15 @@ namespace Amoba
 
                 if (marVan)
                 {
-                    MessageBox.Show("Ez a játékos már létezik!");
+                    MessageBox.Show("Ez a jÃ¡tÃ©kos mÃ¡r lÃ©tezik!");
                     return;
                 }
             }
 
-            // Hozzáadás
+            // HozzÃ¡adÃ¡s
             jatekosok.Add(new List<object> { nev, szin, kep, index });
 
-            // Frissítés
+            // FrissÃ­tÃ©s
             jatekosokKiir();
         }
 
@@ -126,7 +126,7 @@ namespace Amoba
             {
                 Label lbl = jatekosLBL[0];
                 this.Controls.Remove(lbl);
-                lbl.Dispose();          // erõforrás felszabadítása
+                lbl.Dispose();          // erÅ‘forrÃ¡s felszabadÃ­tÃ¡sa
                 jatekosLBL.RemoveAt(0);
             }
 
@@ -153,14 +153,14 @@ namespace Amoba
             if (sender is not Label lbl) return;
 
             DialogResult result = MessageBox.Show(
-                "Biztosan törlöd a játékost?",
-                "Törlés",
+                "Biztosan tÃ¶rlÃ¶d a jÃ¡tÃ©kost?",
+                "TÃ¶rlÃ©s",
                 MessageBoxButtons.YesNo
             );
 
             if (result == DialogResult.Yes)
             {
-                // Megkeressük a label indexét a jatekosLBL listában
+                // MegkeressÃ¼k a label indexÃ©t a jatekosLBL listÃ¡ban
                 int index = jatekosLBL.IndexOf(lbl)+1;
                 if (index >= 0 && index < jatekosok.Count)
                 {
@@ -168,6 +168,16 @@ namespace Amoba
                     jatekosokKiir();
                 }
             }
+        }
+        protected override bool ProcessCmdKey(ref Message msg, Keys keyData)
+        {
+            if (keyData == Keys.Enter)
+            {
+                start_Click(this, EventArgs.Empty);
+                return true; // âœ” csak az Entert nyeljÃ¼k le
+            }
+
+            return base.ProcessCmdKey(ref msg, keyData); // âœ” minden mÃ¡s megy tovÃ¡bb
         }
 
 

@@ -28,28 +28,26 @@
         /// </summary>
         private void InitializeComponent()
         {
-            button1 = new Button();
+            start = new Button();
             ujJatekosBTN = new Button();
             jatekosokLB = new Label();
             SuspendLayout();
             // 
-            // button1
+            // start
             // 
-            button1.Location = new Point(380, 273);
-            button1.Margin = new Padding(4, 5, 4, 5);
-            button1.Name = "button1";
-            button1.Size = new Size(107, 38);
-            button1.TabIndex = 0;
-            button1.Text = "Start";
-            button1.UseVisualStyleBackColor = true;
-            button1.Click += button1_Click;
+            start.Location = new Point(313, 139);
+            start.Name = "start";
+            start.Size = new Size(96, 44);
+            start.TabIndex = 0;
+            start.Text = "Start";
+            start.UseVisualStyleBackColor = true;
+            start.Click += start_Click;
             // 
             // ujJatekosBTN
             // 
-            ujJatekosBTN.Location = new Point(576, 273);
-            ujJatekosBTN.Margin = new Padding(4, 5, 4, 5);
+            ujJatekosBTN.Location = new Point(453, 218);
             ujJatekosBTN.Name = "ujJatekosBTN";
-            ujJatekosBTN.Size = new Size(107, 38);
+            ujJatekosBTN.Size = new Size(75, 23);
             ujJatekosBTN.TabIndex = 1;
             ujJatekosBTN.Text = "Új játékos";
             ujJatekosBTN.UseVisualStyleBackColor = true;
@@ -57,21 +55,21 @@
             // 
             // jatekosokLB
             // 
-            jatekosokLB.Location = new Point(473, 341);
+            jatekosokLB.Location = new Point(313, 250);
+            jatekosokLB.Margin = new Padding(2, 0, 2, 0);
             jatekosokLB.Name = "jatekosokLB";
-            jatekosokLB.Size = new Size(150, 25);
+            jatekosokLB.Size = new Size(105, 15);
             jatekosokLB.TabIndex = 3;
             jatekosokLB.Text = "Játékosok:";
             // 
             // Form1
             // 
-            AutoScaleDimensions = new SizeF(10F, 25F);
+            AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1143, 750);
+            ClientSize = new Size(800, 450);
             Controls.Add(jatekosokLB);
             Controls.Add(ujJatekosBTN);
-            Controls.Add(button1);
-            Margin = new Padding(4, 5, 4, 5);
+            Controls.Add(start);
             Name = "Form1";
             Text = "Amőba";
             ResumeLayout(false);
@@ -79,7 +77,7 @@
 
         #endregion
 
-        private Button button1;
+        private Button start;
         private Button ujJatekosBTN;
         private Label jatekosokLB;
     }

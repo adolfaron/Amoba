@@ -3,6 +3,7 @@
     public partial class Form1 : Form
     {
         int meret = 30;
+
         int kijon = 5;
         //List<string> jatekosNevek = new List<string> { "Üres", "Kör", "X", "Háromszög" };
         List<List<object>> jatekosok = new List<List<object>>()

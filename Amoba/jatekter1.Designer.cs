@@ -1,4 +1,6 @@
 ﻿
+using System.Windows.Forms;
+
 namespace Amoba
 {
     partial class jatekter1
@@ -50,9 +52,11 @@ namespace Amoba
             Controls.Add(kiir);
             Name = "jatekter1";
             Text = "jatekter1";
-            Load += jatekter1_Load;
             Resize += meretez;
             ResumeLayout(false);
+
+            
+
         }
 
         private void meretez(object sender, EventArgs e)

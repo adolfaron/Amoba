@@ -17,6 +17,7 @@ namespace Amoba
         int meret = 30;
         int jatekosSzam = 2;
         List<string> jatekosNevek = new List<string> { "Üres", "Kör", "X" };
+        int kijon = 5;
 
         int cellameret;
         int elhagyas = 12;
@@ -27,83 +28,132 @@ namespace Amoba
         ListBox jatekosok;
 
         PictureBox kovJatekosMutatKep;
-        List<string> kepekUt = new List<string> { "img/ures.png", "img/kor.png", "img/x.png", "img/haromszog.png" };
+        //List<string> kepekUt = new List<string> { "img/ures.png", "img/kor.png", "img/x.png", "img/haromszog.png" };
         List<string> ellenorizve = new List<string>();
         List<string> ellenorizveSzin = new List<string>();
+        List<Color> szinek = new List<Color>();
         string kattintottKord = "-1_-1";
         int kiJon = 0;
         List<Image> kepek = new List<Image>();
+                List<int> pontszamok = new List<int>();
+
 
         int[] iranyDb = new int[] { 1, 1, 1, 1 };//függőleges, jobb föl átló, vízszintes, jobb le átló
         //föl, Jobb föl, jobb, jobb le, le, bal le,                     bal, bal föl
         int[] iranyDbSzin = new int[] { 1, 1, 1, 1 };
 
         string[] iranyOK = new string[] { "-1_0", "-1_1", "0_1", "1_1", "1_0" , "1_-1" , "0_-1" , "-1_-1" };
-        public jatekter1(int ujMeret, int Ujjatekosszam, List<string> ujNevek, List<Image> ujkepek)
+        public jatekter1(int ujMeret, List<string> ujNevek, List<Image> ujkepek, List<Color> ujSzinek, int ujKijon)
         {
-            kepek.Clear();
-            kepek = ujkepek;
-            InitializeComponent();
-            meret = ujMeret;
-            jatekosSzam = Ujjatekosszam;
-            jatekosNevek = ujNevek;
-            cellak = new PictureBox[meret, meret];
-            this.BackColor = Color.White;
-            Text = "Amőba";
-            cellameret = (int)(this.ClientSize.Width * (2.0 / 3.0) / meret);
-            
+            //indításra
+            {
+                kepek.Clear();
+                kepek = ujkepek;
+                InitializeComponent();
+                meret = ujMeret;
+                jatekosSzam = ujNevek.Count - 1;
+                jatekosNevek = ujNevek;
+                szinek = ujSzinek;
+                kijon = ujKijon;
+                cellak = new PictureBox[meret, meret];
+                this.BackColor = Color.White;
+                Text = "Amőba";
+                cellameret = (int)(this.ClientSize.Width * (2.0 / 3.0) / meret);
 
-            for (int sor = 0; sor < meret; sor++)
-            {
-                for (int oszlop = 0; oszlop < meret; oszlop++)
+                pontszamok = Enumerable
+                    .Repeat(0, jatekosNevek.Count)
+                    .ToList();
+
+
+                for (int sor = 0; sor < meret; sor++)
                 {
-                    cellak[sor, oszlop] = new PictureBox();
-                    PictureBox cella = cellak[sor, oszlop];
-                    cella.Size = new Size(cellameret, cellameret);
-                    cella.BackColor = Color.LightGray;
-                    cella.Location = new Point(oszlop * (cella.Size.Width + koz) + elhagyas, sor * (cella.Size.Height + koz) + elhagyas);
-                    this.Controls.Add(cella);
-                    cella.Click += new EventHandler(cekkaKatt);
-                    cella.SizeMode = PictureBoxSizeMode.StretchImage;
-                    cella.Tag = $"{sor}_{oszlop}_0";
+                    for (int oszlop = 0; oszlop < meret; oszlop++)
+                    {
+                        cellak[sor, oszlop] = new PictureBox();
+                        PictureBox cella = cellak[sor, oszlop];
+                        cella.Size = new Size(cellameret, cellameret);
+                        cella.BackColor = Color.LightGray;
+                        cella.Location = new Point(oszlop * (cella.Size.Width + koz) + elhagyas, sor * (cella.Size.Height + koz) + elhagyas);
+                        this.Controls.Add(cella);
+                        cella.Click += new(cekkaKatt);
+                        cella.SizeMode = PictureBoxSizeMode.StretchImage;
+                        cella.Tag = $"{sor}_{oszlop}_0";
+                    }
                 }
-            } 
-            kovJatekosMutat = new Label()
-            {
-                Text = "Következő játékos:",
-                Size = new Size(300, 30),
-                TextAlign = ContentAlignment.MiddleCenter
-            };
-            kovJatekosMutatKep = new PictureBox()
-            {
-                Image = kepek[1],
-                Size = new Size(50, 50),
-                SizeMode = PictureBoxSizeMode.StretchImage,
-            };
-            jatekosok = new ListBox()
-            {
-                Size = new Size(180, 200),
-                SelectionMode = SelectionMode.One,
-                BorderStyle = BorderStyle.None,
-                BackColor = this.BackColor,
-                ForeColor = Color.Black,
-                Enabled = false,
-            };
-            jatekosok.Height = jatekosSzam * 20 + 10;
+                kovJatekosMutat = new Label()
+                {
+                    Text = "Következő játékos:",
+                    Size = new Size(300, 30),
+                    TextAlign = ContentAlignment.MiddleCenter
+                };
+                kovJatekosMutatKep = new PictureBox()
+                {
+                    Image = kepek[1],
+                    Size = new Size(50, 50),
+                    SizeMode = PictureBoxSizeMode.StretchImage,
+                };
+                jatekosok = new ListBox()
+                {
+                    Size = new Size(180, 200),
+                    SelectionMode = SelectionMode.One,
+                    BorderStyle = BorderStyle.None,
+                    BackColor = this.BackColor,
+                    ForeColor = Color.Black,
+                    Enabled = false,
+
+                };
+                jatekosok.ItemHeight = 40; // vagy a kívánt pixel
+                jatekosok.Height = jatekosSzam * jatekosok.ItemHeight + 2; // 2 pixel keretnek
+                jatekosok.SelectionMode = SelectionMode.One;
+                jatekosok.DrawMode = DrawMode.OwnerDrawFixed;
+
+                jatekosok.DrawItem += (s, e) =>
+                {
+                    if (e.Index < 0) return;
+
+                    bool kijelolt = (e.State & DrawItemState.Selected) == DrawItemState.Selected;
+
+                    Color hatter = kijelolt ? Color.DarkGray : jatekosok.BackColor;
+                    Color szoveg = kijelolt ? Color.White : jatekosok.ForeColor;
+
+                    using (SolidBrush bg = new SolidBrush(hatter))
+                        e.Graphics.FillRectangle(bg, e.Bounds);
+
+                    string szovegTartalom = jatekosok.Items[e.Index].ToString();
+
+                    using (SolidBrush fg = new SolidBrush(szoveg))
+                        e.Graphics.DrawString(
+                            szovegTartalom,
+                            e.Font,
+                            fg,
+                            e.Bounds.Left + 6,
+                            e.Bounds.Top + 10
+                        );
+
+                    e.DrawFocusRectangle();
+                };
+                jatekosokKiir();
+
+                this.Controls.Add(jatekosok);
+                this.Controls.Add(kovJatekosMutatKep);
+                this.Controls.Add(kovJatekosMutat);
+                elhelyezesSzamol();
+                kiJon = 1;
+                //kovJatekosMutat.Text = "Következő játékos:\n" + jatekosNevek[kiJon];
+                kovJatekosMutatKep.Image = kepek[kiJon];
+                jatekosok.SelectedIndex = kiJon - 1;
+
+            }
+        }
+        private void jatekosokKiir()
+        {
+            int kival = jatekosok.SelectedIndex;
+            jatekosok.Items.Clear();
             for (int i = 1; i <= jatekosSzam; i++)
             {
-                jatekosok.Items.Add(jatekosNevek[i]);
+                jatekosok.Items.Add(jatekosNevek[i] + ": " + pontszamok[i]);
             }
-
-            this.Controls.Add(jatekosok);
-            this.Controls.Add(kovJatekosMutatKep);
-            this.Controls.Add(kovJatekosMutat);
-            elhelyezesSzamol();
-            kiJon = 1;
-            //kovJatekosMutat.Text = "Következő játékos:\n" + jatekosNevek[kiJon];
-            kovJatekosMutatKep.Image = kepek[kiJon];
-            jatekosok.SelectedIndex = kiJon - 1;
-
+            jatekosok.SelectedIndex = kival;
         }
 
         private void elhelyezesSzamol()
@@ -117,7 +167,13 @@ namespace Amoba
             int cellakSzelesseg = 2 * elhagyas + (cellameret + koz) * meret;
             int maradek = this.ClientSize.Width - cellakSzelesseg;
             int width = this.ClientSize.Width;
-            this.Height = cellakSzelesseg+elhagyas*2;
+            //this.Height = cellakSzelesseg+elhagyas*2;
+            //this.ClientSize = new Size(this.Width, this.Height);
+            this.ClientSize = new Size(
+                this.ClientSize.Width,
+                cellakSzelesseg + elhagyas * 2
+            );
+
             if (kovJatekosMutat.Width > maradek)
             {
                 kovJatekosMutat.Width = maradek-2*elhagyas;
@@ -199,6 +255,20 @@ namespace Amoba
             
             ellenoriz(sor, oszlop, ertek, "");
             kiir.AppendText("irányok: " + string.Join(", ", iranyDb) + "\n");
+            teleEll();
+        }
+
+        private void teleEll()
+        {
+            for (int sor = 0; sor < meret; sor++)
+            {
+                for (int oszlop = 0; oszlop < meret; oszlop++)
+                {
+                    if (Convert.ToInt32(cellak[sor, oszlop].Tag.ToString().Split('_')[2]) == 0)
+                        return;
+                }
+            };
+            MessageBox.Show("nincs több lépés");
         }
 
         private void ellenoriz(int sor, int oszlop, int ertek, string irany)
@@ -268,7 +338,7 @@ namespace Amoba
 
                 for (int ind = 0; ind < 4; ind++)
                 {
-                    if (iranyDb[ind] + iranyDb[ind + 4] >= 5)
+                    if (iranyDb[ind] + iranyDb[ind + 4] >= kijon)
                     {
                         //MessageBox.Show("Nyert a " + (ertek == 1 ? "kör" : ertek == 2 ? "X":"hiba") + " játékos!");
                         ellenorizveSzin.Clear();
@@ -339,41 +409,45 @@ namespace Amoba
             return iranyOK.ToList().IndexOf(koord);
         }
 
-        private void jatekter1_Load(object sender, EventArgs e)
-        {
-
-        }
-
         private void cellaszinez(int sor, int oszlop, int ertek, string irany)
         {
             if (ellenorizveSzin.Contains(sor + "_" + oszlop))
             {
                 return;
             }
+            pontszamok[ertek] +=1;
+            jatekosokKiir();
             ellenorizveSzin.Add((sor + "_" + oszlop));
             int ellS = Convert.ToInt32(irany.Split('_')[0]);
             int ellO = Convert.ToInt32(irany.Split('_')[1]);
 
-            int s = sor + ellS;
-            int o = oszlop + ellO;
+            int s = sor;
+            int o = oszlop;
+
+            int ujertek;
             //cellak[sor, oszlop].BackColor = Color.Red;
-            int ujertek = Convert.ToInt32(cellak[s, o].Tag.ToString().Split('_')[2]);
-
-            while (ujertek == ertek)
+            if (s >= 0 && s < meret && o >= 0 && o < meret)
             {
-                if (!(s >= 0 && s < meret && o >= 0 && o < meret)) break;
-                cellak[s, o].BackColor = Color.Red;
-                s = s + ellS;
-                o = o + ellO;
-                if (!(s >= 0 && s < meret && o >= 0 && o < meret)) break;
                 ujertek = Convert.ToInt32(cellak[s, o].Tag.ToString().Split('_')[2]);
-                /*
-                cellaszinez(s, o, ertek, irany);
-                irany = ((-ellS).ToString() + "_" + (-ellO).ToString());
-                cellaszinez(s, o, ertek, irany);*/
-                //Thread.Sleep(1000);
 
+                while (ujertek == ertek)
+                {
+                    if (!(s >= 0 && s < meret && o >= 0 && o < meret)) break;
+                    cellak[s, o].BackColor = vilagosit(szinek[ertek]);
+                    s = s + ellS;
+                    o = o + ellO;
+                    if (!(s >= 0 && s < meret && o >= 0 && o < meret)) break;
+                    ujertek = Convert.ToInt32(cellak[s, o].Tag.ToString().Split('_')[2]);
+                    /*
+                    cellaszinez(s, o, ertek, irany);
+                    irany = ((-ellS).ToString() + "_" + (-ellO).ToString());
+                    cellaszinez(s, o, ertek, irany);*/
+                    //Thread.Sleep(1000);
+
+                }
             }
+            s = sor;
+            o = oszlop;
             irany = ((-ellS).ToString() + "_" + (-ellO).ToString());
             ellS = Convert.ToInt32(irany.Split('_')[0]);
             ellO = Convert.ToInt32(irany.Split('_')[1]);
@@ -382,7 +456,7 @@ namespace Amoba
             {
                 if (!(s >= 0 && s < meret && o >= 0 && o < meret)) break;
                 if (Convert.ToInt32(cellak[s, o].Tag.ToString().Split('_')[2]) == ertek)
-                cellak[s, o].BackColor = Color.Red;
+                    cellak[s, o].BackColor = vilagosit(szinek[ertek]);
                 s = s + ellS;
                 o = o + ellO;
                 if (!(s >= 0 && s < meret && o >= 0 && o < meret)) break;
@@ -393,6 +467,14 @@ namespace Amoba
                 cellaszinez(s, o, ertek, irany);*/
 
             }
+        }
+
+        private Color vilagosit(Color color)
+        {
+            int r = color.R/2;
+            int g = color.G/2;
+            int b = color.B/2;
+            return Color.FromArgb(r, g, b);
         }
     }
 }

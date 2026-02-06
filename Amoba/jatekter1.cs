@@ -14,10 +14,12 @@ namespace Amoba
 
     public partial class jatekter1 : Form
     {
-        int meret = 30;
+        //int meret = 30;
+        int meret;
         int jatekosSzam = 2;
         List<string> jatekosNevek = new List<string> { "Üres", "Kör", "X" };
-        int kijon = 5;
+        int kijon;
+        //int kijon = 5;
 
         int cellameret;
         int elhagyas = 12;
@@ -268,7 +270,33 @@ namespace Amoba
                         return;
                 }
             };
-            MessageBox.Show("nincs több lépés");
+            int max = pontszamok[0];
+            foreach (int pont in pontszamok)
+            {
+                if (pont > max)
+                { 
+                    max = pont;
+                }
+            }
+            
+            if (max != 0)
+            {
+                string dontetlen = "";
+                int dontetlenDb = 0;
+                List<string> nevek = jatekosNevek;
+                foreach (int pont in pontszamok)
+                {
+                    if (pont == max)
+                    {
+                        dontetlen += (dontetlen == ""?"":", ")+nevek[pontszamok.IndexOf(max)];
+                        nevek.RemoveAt(pontszamok.IndexOf(max));
+                        dontetlenDb++;
+                    }
+                }
+                    MessageBox.Show("Nincs több lépés! " + dontetlen+(dontetlenDb == 1 ? " nyert!" :  " döntetlen!"));
+            }
+            else
+                MessageBox.Show("Nincs több lépés! Nincs nyertes!");
         }
 
         private void ellenoriz(int sor, int oszlop, int ertek, string irany)

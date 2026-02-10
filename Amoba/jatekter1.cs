@@ -25,6 +25,8 @@ namespace Amoba
         int elhagyas = 12;
         int koz = 3;
 
+        int maxLerakott = 10;
+
         PictureBox[,] cellak;
         Label kovJatekosMutat;
         ListBox jatekosok;
@@ -43,6 +45,8 @@ namespace Amoba
         int[] iranyDb = new int[] { 1, 1, 1, 1 };//függőleges, jobb föl átló, vízszintes, jobb le átló
         //föl, Jobb föl, jobb, jobb le, le, bal le,                     bal, bal föl
         int[] iranyDbSzin = new int[] { 1, 1, 1, 1 };
+
+        List<int> jatekosTart = new List<int>();     
 
         string[] iranyOK = new string[] { "-1_0", "-1_1", "0_1", "1_1", "1_0" , "1_-1" , "0_-1" , "-1_-1" };
         public jatekter1(int ujMeret, List<string> ujNevek, List<Image> ujkepek, List<Color> ujSzinek, int ujKijon)
@@ -66,7 +70,9 @@ namespace Amoba
                     .Repeat(0, jatekosNevek.Count)
                     .ToList();
 
-
+                for (int i = 0; i < jatekosSzam; i++) { 
+                    jatekosTart.Add(0);
+                }
                 for (int sor = 0; sor < meret; sor++)
                 {
                     for (int oszlop = 0; oszlop < meret; oszlop++)
@@ -75,6 +81,7 @@ namespace Amoba
                         PictureBox cella = cellak[sor, oszlop];
                         cella.Size = new Size(cellameret, cellameret);
                         cella.BackColor = Color.LightGray;
+                        //asd
                         cella.Location = new Point(oszlop * (cella.Size.Width + koz) + elhagyas, sor * (cella.Size.Height + koz) + elhagyas);
                         this.Controls.Add(cella);
                         cella.Click += new(cekkaKatt);
@@ -224,6 +231,8 @@ namespace Amoba
         private void cekkaKatt(object sender, EventArgs e)
         {
             PictureBox kattintott = sender as PictureBox;
+            
+
             int sor = Convert.ToInt32(kattintott.Tag.ToString().Split('_')[0]);
             int oszlop = Convert.ToInt32(kattintott.Tag.ToString().Split('_')[1]);
             int ertek = Convert.ToInt32(kattintott.Tag.ToString().Split('_')[2]);
@@ -233,6 +242,22 @@ namespace Amoba
             ertek = kiJon;
             kattintott.Tag = $"{sor}_{oszlop}_{ertek}";
             kattintottKord = $"{sor}_{oszlop}";
+            jatekosTart[kijon] += 1;
+
+            for (int dbsor = 0; dbsor < meret; dbsor++)
+            {
+                for (int dboszlop = 0; dboszlop < meret; dboszlop++)
+                {
+                    int akt = Convert.ToInt32(cellak[dbsor, dboszlop].Tag.ToString().Split('_')[3]);
+                    if (akt < jatekosTart[kijon] - maxLerakott)
+                    {
+                        cellak[dbsor, dboszlop].BackColor = Color.LightGray;
+                        cellak[dbsor, dboszlop].Image = kepek[0];
+                        //asd
+                    }
+                }
+            }
+
             kiJon += 1;
             if (kiJon == jatekosSzam + 1)
             {
@@ -375,7 +400,8 @@ namespace Amoba
                         int szinOszl = Convert.ToInt32(kattintottKord.Split('_')[1]);
                         cellaszinez(szinSor, szinOszl, ertek, iranyOK[ind]);
                         //MessageBox.Show("Nyert a " + ertek + " játékos!");
-                        
+                        iranyDb[ind] = 0;
+                        iranyDb[ind + 4] = 0;
                     }
                 }
 
@@ -453,6 +479,9 @@ namespace Amoba
             int o = oszlop;
 
             int ujertek;
+
+            int tagS = Convert.ToInt32(cellak[s, o].Tag.ToString().Split('_')[0]);
+            int tagO = Convert.ToInt32(cellak[s, o].Tag.ToString().Split('_')[1]);
             //cellak[sor, oszlop].BackColor = Color.Red;
             if (s >= 0 && s < meret && o >= 0 && o < meret)
             {
@@ -462,6 +491,7 @@ namespace Amoba
                 {
                     if (!(s >= 0 && s < meret && o >= 0 && o < meret)) break;
                     cellak[s, o].BackColor = vilagosit(szinek[ertek]);
+                    //cellak[s, o].Tag = $"{tagS}_{tagO}_0";
                     s = s + ellS;
                     o = o + ellO;
                     if (!(s >= 0 && s < meret && o >= 0 && o < meret)) break;
@@ -480,11 +510,16 @@ namespace Amoba
             ellS = Convert.ToInt32(irany.Split('_')[0]);
             ellO = Convert.ToInt32(irany.Split('_')[1]);
             ujertek = ertek;
+
             while (ujertek == ertek)
             {
                 if (!(s >= 0 && s < meret && o >= 0 && o < meret)) break;
                 if (Convert.ToInt32(cellak[s, o].Tag.ToString().Split('_')[2]) == ertek)
+                {
                     cellak[s, o].BackColor = vilagosit(szinek[ertek]);
+                    //cellak[s, o].Tag = $"{tagS}_{tagO}_0";
+                }
+
                 s = s + ellS;
                 o = o + ellO;
                 if (!(s >= 0 && s < meret && o >= 0 && o < meret)) break;

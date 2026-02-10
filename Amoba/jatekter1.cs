@@ -27,6 +27,8 @@ namespace Amoba
 
         int maxLerakott = 10;
 
+        int kor = 0;
+
         PictureBox[,] cellak;
         Label kovJatekosMutat;
         ListBox jatekosok;
@@ -37,7 +39,7 @@ namespace Amoba
         List<string> ellenorizveSzin = new List<string>();
         List<Color> szinek = new List<Color>();
         string kattintottKord = "-1_-1";
-        int kiJon = 0;
+        int kiKov = 0;
         List<Image> kepek = new List<Image>();
                 List<int> pontszamok = new List<int>();
 
@@ -86,7 +88,7 @@ namespace Amoba
                         this.Controls.Add(cella);
                         cella.Click += new(cekkaKatt);
                         cella.SizeMode = PictureBoxSizeMode.StretchImage;
-                        cella.Tag = $"{sor}_{oszlop}_0";
+                        cella.Tag = $"{sor}_{oszlop}_0_0";
                     }
                 }
                 kovJatekosMutat = new Label()
@@ -147,10 +149,10 @@ namespace Amoba
                 this.Controls.Add(kovJatekosMutatKep);
                 this.Controls.Add(kovJatekosMutat);
                 elhelyezesSzamol();
-                kiJon = 1;
-                //kovJatekosMutat.Text = "Következő játékos:\n" + jatekosNevek[kiJon];
-                kovJatekosMutatKep.Image = kepek[kiJon];
-                jatekosok.SelectedIndex = kiJon - 1;
+                kiKov = 1;
+                //kovJatekosMutat.Text = "Következő játékos:\n" + jatekosNevek[kiKov];
+                kovJatekosMutatKep.Image = kepek[kiKov];
+                jatekosok.SelectedIndex = kiKov - 1;
 
             }
         }
@@ -236,36 +238,43 @@ namespace Amoba
             int sor = Convert.ToInt32(kattintott.Tag.ToString().Split('_')[0]);
             int oszlop = Convert.ToInt32(kattintott.Tag.ToString().Split('_')[1]);
             int ertek = Convert.ToInt32(kattintott.Tag.ToString().Split('_')[2]);
+            int akt = Convert.ToInt32(kattintott.Tag.ToString().Split('_')[3]);
             if (ertek != 0)
                 return;
-            kattintott.Image = kepek[kiJon];
-            ertek = kiJon;
-            kattintott.Tag = $"{sor}_{oszlop}_{ertek}";
+            kattintott.Image = kepek[kiKov];
+            ertek = kiKov;
+            kattintott.Tag = $"{sor}_{oszlop}_{ertek}_{kor}";
             kattintottKord = $"{sor}_{oszlop}";
-            jatekosTart[kijon] += 1;
+            jatekosTart[kiKov-1] += 1;
 
             for (int dbsor = 0; dbsor < meret; dbsor++)
             {
                 for (int dboszlop = 0; dboszlop < meret; dboszlop++)
                 {
-                    int akt = Convert.ToInt32(cellak[dbsor, dboszlop].Tag.ToString().Split('_')[3]);
-                    if (akt < jatekosTart[kijon] - maxLerakott)
+                    int ujakt = Convert.ToInt32(cellak[dbsor, dboszlop].Tag.ToString().Split('_')[3]);
+                    int ujertek = Convert.ToInt32(cellak[dbsor, dboszlop].Tag.ToString().Split('_')[2]);
+
+                    if (ujakt < jatekosTart[kiKov-1] - maxLerakott && ujertek == ertek    )
                     {
+                        
                         cellak[dbsor, dboszlop].BackColor = Color.LightGray;
                         cellak[dbsor, dboszlop].Image = kepek[0];
-                        //asd
+                        int ujsor = Convert.ToInt32(kattintott.Tag.ToString().Split('_')[0]);
+                        int ujoszlop = Convert.ToInt32(kattintott.Tag.ToString().Split('_')[1]);
+                        cellak[dbsor, dboszlop].Tag = $"{ujsor}_{ujoszlop}_0_0";
                     }
                 }
             }
 
-            kiJon += 1;
-            if (kiJon == jatekosSzam + 1)
+            kiKov += 1;
+            if (kiKov == jatekosSzam + 1)
             {
-                kiJon = 1;
+                kiKov = 1;
+                kor++;               
             }
-            //kovJatekosMutat.Text = "Következő játékos:\n" + jatekosNevek[kiJon];
-            jatekosok.SelectedIndex = kiJon-1;
-            kovJatekosMutatKep.Image = kepek[kiJon];
+            //kovJatekosMutat.Text = "Következő játékos:\n" + jatekosNevek[kiKov];
+            jatekosok.SelectedIndex = kiKov-1;
+            kovJatekosMutatKep.Image = kepek[kiKov];
 
             //MessageBox.Show("irányok: " + string.Join(", ", iranyDb)+"\n");
             kiir.Clear();

@@ -25,7 +25,7 @@ namespace Amoba
         int elhagyas = 12;
         int koz = 3;
 
-        int maxLerakott = 10;
+        int maxLerakott = 3;
 
         int kor = 0;
 
@@ -44,7 +44,7 @@ namespace Amoba
                 List<int> pontszamok = new List<int>();
 
 
-        int[] iranyDb = new int[] { 1, 1, 1, 1 };//függőleges, jobb föl átló, vízszintes, jobb le átló
+        int[] iranyDb = new int[] { 1, 1, 1, 1, 0, 0, 0, 0 };//függőleges, jobb föl átló, vízszintes, jobb le átló
         //föl, Jobb föl, jobb, jobb le, le, bal le,                     bal, bal föl
         int[] iranyDbSzin = new int[] { 1, 1, 1, 1 };
 

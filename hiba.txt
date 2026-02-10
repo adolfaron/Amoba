@@ -1,0 +1,20 @@
+kör kezd:
+- o -
+- - -
+x - -
+2:
+-o-
+x-o
+x--
+3:
+xoo
+x-o
+x--
+4:
+x-o
+x-o
+-ox
+5:
+x-o
+-x-
+ooX(itt kijelöli a oo-t)

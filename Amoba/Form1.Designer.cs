@@ -86,9 +86,9 @@
             label1.AutoSize = true;
             label1.Location = new Point(546, 164);
             label1.Name = "label1";
-            label1.Size = new Size(142, 15);
+            label1.Size = new Size(89, 15);
             label1.TabIndex = 5;
-            label1.Text = "Mekkora legyen a játéktér";
+            label1.Text = "játéktér mérete:";
             // 
             // groupBox1
             // 
@@ -132,7 +132,7 @@
             lerakotmax.Name = "lerakotmax";
             lerakotmax.Size = new Size(120, 23);
             lerakotmax.TabIndex = 7;
-            lerakotmax.Value = new decimal(new int[] { 3, 0, 0, 0 });
+            lerakotmax.Value = new decimal(new int[] { 5, 0, 0, 0 });
             // 
             // Form1
             // 

@@ -46,12 +46,12 @@
             {
                 lerakotmaxx = (int)lerakotmax.Value;
             }
-            else { lerakotmaxx = 5; }
+            else { lerakotmaxx = meret*meret; }
 
             List<string> jatekosNevek = jatekosok.Select(j => (string)j[0]).ToList();
             List<Color> szinek = jatekosok.Select(j => (Color)j[1]).ToList();
 
-            jatekter1 ujjatek = new jatekter1(meret, jatekosNevek, kepek, szinek, kijon,lerakotmaxx);
+            jatekter1 ujjatek = new jatekter1(meret, jatekosNevek, kepek, szinek, kijon, lerakotmaxx);
             ujjatek.ShowDialog();
             try
             {

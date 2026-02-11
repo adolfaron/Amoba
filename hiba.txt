@@ -17,4 +17,20 @@ x-o
 5:
 x-o
 -x-
-ooX(itt kijelöli a oo-t)
+ooX(itt kijelöli a oo-t)for (int dbsor = 0; dbsor < meret; dbsor++)
+{
+    for (int dboszlop = 0; dboszlop < meret; dboszlop++)
+    {
+        int ujakt = Convert.ToInt32(cellak[dbsor, dboszlop].Tag.ToString().Split('_')[3]);
+        int ujertek = Convert.ToInt32(cellak[dbsor, dboszlop].Tag.ToString().Split('_')[2]);
+
+        if (ujakt < jatekosTart[kiKov-1] - maxLerakott && ujertek == ertek)
+        {
+            cellak[dbsor, dboszlop].BackColor = Color.LightGray;
+            cellak[dbsor, dboszlop].Image = kepek[0];
+            
+            // SAJÁT KOORDINÁTÁT HASZNÁLD, ne a kattintottét!
+            cellak[dbsor, dboszlop].Tag = $"{dbsor}_{dboszlop}_0_0";
+        }
+    }
+}

@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Amoba")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+7b94e0fa4d5f09a2ba2b297a5d11915a07124f30")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+0a14677bfe36753450fe048269821f2eae3d07d7")]
 [assembly: System.Reflection.AssemblyProductAttribute("Amoba")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Amoba")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

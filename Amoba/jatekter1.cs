@@ -255,14 +255,13 @@ namespace Amoba
                     int ujakt = Convert.ToInt32(cellak[dbsor, dboszlop].Tag.ToString().Split('_')[3]);
                     int ujertek = Convert.ToInt32(cellak[dbsor, dboszlop].Tag.ToString().Split('_')[2]);
 
-                    if (ujakt < jatekosTart[kiKov-1] - maxLerakott && ujertek == ertek    )
+                    if (ujakt < jatekosTart[kiKov - 1] - maxLerakott && ujertek == ertek)
                     {
-                        
                         cellak[dbsor, dboszlop].BackColor = Color.LightGray;
                         cellak[dbsor, dboszlop].Image = kepek[0];
-                        int ujsor = Convert.ToInt32(kattintott.Tag.ToString().Split('_')[0]);
-                        int ujoszlop = Convert.ToInt32(kattintott.Tag.ToString().Split('_')[1]);
-                        cellak[dbsor, dboszlop].Tag = $"{ujsor}_{ujoszlop}_0_0";
+
+                        // SAJÁT KOORDINÁTÁT HASZNÁLD, ne a kattintottét!
+                        cellak[dbsor, dboszlop].Tag = $"{dbsor}_{dboszlop}_0_0";
                     }
                 }
             }

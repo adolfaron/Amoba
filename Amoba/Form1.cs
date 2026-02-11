@@ -13,12 +13,14 @@
             new List<object> { "X", Color.Red, Image.FromFile("img/szimbolumok/2x.png"), 1 }
         };
         //List<string> kepekUt = new List<string> { "img/ures.png", "img/szimbolumok/kor.png", "img/szimbolumok/x.png", "img/szimbolumok/haromszog.png" };
-        
+
         List<Label> jatekosLBL = new List<Label>();
         public Form1()
         {
             InitializeComponent();
             jatekosokKiir();
+            lerakotmax.Visible= false;
+            radioButton2.Checked = true;
         }
 
 
@@ -38,10 +40,18 @@
                 kepek.Add(kep);
             }
 
+            meret = (int)merete.Value;
+            int lerakotmaxx;
+            if (radioButton1.Checked)
+            {
+                lerakotmaxx = (int)lerakotmax.Value;
+            }
+            else { lerakotmaxx = 5; }
+
             List<string> jatekosNevek = jatekosok.Select(j => (string)j[0]).ToList();
             List<Color> szinek = jatekosok.Select(j => (Color)j[1]).ToList();
 
-            jatekter1 ujjatek = new jatekter1(meret, jatekosNevek, kepek, szinek, kijon);
+            jatekter1 ujjatek = new jatekter1(meret, jatekosNevek, kepek, szinek, kijon,lerakotmaxx);
             ujjatek.ShowDialog();
             try
             {
@@ -92,7 +102,7 @@
         {
             skinek ablak = new skinek(this);
             ablak.ShowDialog();
-            
+
         }
         public void ujJatekos(string nev, Color szin, Image kep, int index)
         {
@@ -163,7 +173,7 @@
             if (result == DialogResult.Yes)
             {
                 // Megkeressük a label indexét a jatekosLBL listában
-                int index = jatekosLBL.IndexOf(lbl)+1;
+                int index = jatekosLBL.IndexOf(lbl) + 1;
                 if (index >= 0 && index < jatekosok.Count)
                 {
                     jatekosok.RemoveAt(index);
@@ -182,6 +192,28 @@
             return base.ProcessCmdKey(ref msg, keyData);
         }
 
+        private void groupBox1_Enter(object sender, EventArgs e)
+        {
 
+        }
+
+        private void radioButton1_CheckedChanged(object sender, EventArgs e)
+        {
+
+            if (radioButton1.Checked)
+            {
+                lerakotmax.Visible = true;
+            }
+            else
+            {
+                lerakotmax.Visible = false;
+            }
+        }
+
+        private void radioButton2_CheckedChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }
+

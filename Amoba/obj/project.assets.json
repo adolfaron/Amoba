@@ -8,19 +8,19 @@
     "net8.0-windows7.0": []
   },
   "packageFolders": {
-    "C:\\Users\\Admin\\.nuget\\packages\\": {}
+    "C:\\Users\\banhidialex\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Admin\\OneDrive - Bajai SZC Türr István Technikum\\Órák\\IKT\\Amoba\\Amoba\\Amoba.csproj",
+      "projectUniqueName": "C:\\Users\\banhidialex\\Source\\Repos\\Amoba\\Amoba\\Amoba.csproj",
       "projectName": "Amoba",
-      "projectPath": "C:\\Users\\Admin\\OneDrive - Bajai SZC Türr István Technikum\\Órák\\IKT\\Amoba\\Amoba\\Amoba.csproj",
-      "packagesPath": "C:\\Users\\Admin\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Admin\\OneDrive - Bajai SZC Türr István Technikum\\Órák\\IKT\\Amoba\\Amoba\\obj\\",
+      "projectPath": "C:\\Users\\banhidialex\\Source\\Repos\\Amoba\\Amoba\\Amoba.csproj",
+      "packagesPath": "C:\\Users\\banhidialex\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\banhidialex\\Source\\Repos\\Amoba\\Amoba\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\Admin\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\banhidialex\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -28,6 +28,7 @@
       ],
       "sources": {
         "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+        "C:\\Program Files\\dotnet\\library-packs": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
@@ -45,8 +46,7 @@
         "enableAudit": "true",
         "auditLevel": "low",
         "auditMode": "direct"
-      },
-      "SdkAnalysisLevel": "9.0.300"
+      }
     },
     "frameworks": {
       "net8.0-windows7.0": {
@@ -70,7 +70,7 @@
             "privateAssets": "none"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.308/PortableRuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.400/PortableRuntimeIdentifierGraph.json"
       }
     }
   }

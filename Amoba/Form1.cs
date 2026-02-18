@@ -47,6 +47,7 @@
                 lerakotmaxx = (int)lerakotmax.Value;
             }
             else { lerakotmaxx = meret*meret; }
+            kijon = (int)kijonBe.Value;
 
             List<string> jatekosNevek = jatekosok.Select(j => (string)j[0]).ToList();
             List<Color> szinek = jatekosok.Select(j => (Color)j[1]).ToList();
@@ -190,11 +191,6 @@
             }
 
             return base.ProcessCmdKey(ref msg, keyData);
-        }
-
-        private void groupBox1_Enter(object sender, EventArgs e)
-        {
-
         }
 
         private void radioButton1_CheckedChanged(object sender, EventArgs e)

@@ -51,7 +51,7 @@ namespace Amoba
         List<int> jatekosTart = new List<int>();     
 
         string[] iranyOK = new string[] { "-1_0", "-1_1", "0_1", "1_1", "1_0" , "1_-1" , "0_-1" , "-1_-1" };
-        public jatekter1(int ujMeret, List<string> ujNevek, List<Image> ujkepek, List<Color> ujSzinek, int ujKijon,int lerakotmax)
+        public jatekter1(int ujMeret, List<string> ujNevek, List<Image> ujkepek, List<Color> ujSzinek, int ujKijon, int lerakotmax)
         {
             //indításra
             {
@@ -63,6 +63,7 @@ namespace Amoba
                 jatekosNevek = ujNevek;
                 szinek = ujSzinek;
                 maxLerakott = lerakotmax;
+                //MessageBox.Show(maxLerakott + "Maxlerakott");
                 kijon = ujKijon;
                 cellak = new PictureBox[meret, meret];
                 this.BackColor = Color.White;

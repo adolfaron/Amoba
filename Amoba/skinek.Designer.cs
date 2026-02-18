@@ -119,7 +119,7 @@
             MaximizeBox = false;
             MinimizeBox = false;
             Name = "skinek";
-            Text = "skinek";
+            Text = "Új játékos létrehozása";
             ((System.ComponentModel.ISupportInitialize)jatekosSzimb).EndInit();
             ResumeLayout(false);
             PerformLayout();

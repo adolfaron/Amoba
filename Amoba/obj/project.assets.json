@@ -13,11 +13,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\adolfaron\\Downloads\\Amoba\\Amoba\\Amoba.csproj",
+      "projectUniqueName": "C:\\Users\\adolfaron\\Source\\Repos\\Amoba\\Amoba\\Amoba.csproj",
       "projectName": "Amoba",
-      "projectPath": "C:\\Users\\adolfaron\\Downloads\\Amoba\\Amoba\\Amoba.csproj",
+      "projectPath": "C:\\Users\\adolfaron\\Source\\Repos\\Amoba\\Amoba\\Amoba.csproj",
       "packagesPath": "C:\\Users\\adolfaron\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\adolfaron\\Downloads\\Amoba\\Amoba\\obj\\",
+      "outputPath": "C:\\Users\\adolfaron\\Source\\Repos\\Amoba\\Amoba\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\adolfaron\\AppData\\Roaming\\NuGet\\NuGet.Config",

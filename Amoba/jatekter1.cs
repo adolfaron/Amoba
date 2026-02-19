@@ -90,7 +90,7 @@ namespace Amoba
                         this.Controls.Add(cella);
                         cella.Click += new(cekkaKatt);
                         cella.SizeMode = PictureBoxSizeMode.StretchImage;
-                        cella.Tag = $"{sor}_{oszlop}_0_0";
+                        cella.Tag = $"{sor}_{oszlop}_0_0_0";
                     }
                 }
                 kovJatekosMutat = new Label()
@@ -235,17 +235,23 @@ namespace Amoba
         private void cekkaKatt(object sender, EventArgs e)
         {
             PictureBox kattintott = sender as PictureBox;
-            
 
-            int sor = Convert.ToInt32(kattintott.Tag.ToString().Split('_')[0]);
-            int oszlop = Convert.ToInt32(kattintott.Tag.ToString().Split('_')[1]);
-            int ertek = Convert.ToInt32(kattintott.Tag.ToString().Split('_')[2]);
-            int akt = Convert.ToInt32(kattintott.Tag.ToString().Split('_')[3]);
+
+            string[] tag = kattintott.Tag.ToString().Split('_');
+            //tag[4] = "1";
+            //kattintott.Tag = string.Join("_", tag);
+
+            int sor = Convert.ToInt32(tag[0]);
+            int oszlop = Convert.ToInt32(tag[1]);
+            int ertek = Convert.ToInt32(tag[2]);
             if (ertek != 0)
                 return;
             kattintott.Image = kepek[kiKov];
             ertek = kiKov;
-            kattintott.Tag = $"{sor}_{oszlop}_{ertek}_{kor}";
+            tag[2] = kiKov.ToString();
+            tag[3] = kor.ToString();
+            //kattintott.Tag = $"{sor}_{oszlop}_{ertek}_{kor}_0";
+            kattintott.Tag = string.Join("_", tag);
             kattintottKord = $"{sor}_{oszlop}";
             jatekosTart[kiKov-1] += 1;
 
@@ -261,8 +267,7 @@ namespace Amoba
                         cellak[dbsor, dboszlop].BackColor = Color.LightGray;
                         cellak[dbsor, dboszlop].Image = kepek[0];
 
-                        // SAJÁT KOORDINÁTÁT HASZNÁLD, ne a kattintottét!
-                        cellak[dbsor, dboszlop].Tag = $"{dbsor}_{dboszlop}_0_0";
+                        cellak[dbsor, dboszlop].Tag = $"{dbsor}_{dboszlop}_0_0_0";
                     }
                 }
             }
@@ -351,7 +356,8 @@ namespace Amoba
                         //if (s >= 0 && s < meret && o >= 0 && o < meret) continue;
                         //cellak[s, o].BackColor = Color.Orange;
                         int ellErtek = Convert.ToInt32(cellak[s, o].Tag.ToString().Split('_')[2]);
-                        if (ellErtek == ertek)
+                        int kijott = Convert.ToInt32(cellak[s, o].Tag.ToString().Split('_')[4]);
+                        if (ellErtek == ertek && kijott == 0)
                         {
                             int iranyindex = koordinataSzamSzamol(i, j);
                             /*int db = iranyDb[iranyindex];
@@ -393,6 +399,8 @@ namespace Amoba
                 int s = sor + ellS;
                 int o = oszlop + ellO;
 
+                int kijott = Convert.ToInt32(cellak[s, o].Tag.ToString().Split('_')[4]);
+
                 //kiir.AppendText("\nkülön: "+ellS+"_"+ ellO);
                 kiir.AppendText("\n"+ koordinataSzamSzamol(ellS, ellO));
 
@@ -418,7 +426,7 @@ namespace Amoba
                 if (!(s >= 0 && s < meret && o >= 0 && o < meret)) return;
 
                 int ellErtek = Convert.ToInt32(cellak[s, o].Tag.ToString().Split('_')[2]);
-                if (ellErtek == ertek)
+                if (ellErtek == ertek && kijott == 0)
                 {
                     if (!ellenorizve.Contains(s + "_" + o))
                     {
@@ -501,6 +509,11 @@ namespace Amoba
                 {
                     if (!(s >= 0 && s < meret && o >= 0 && o < meret)) break;
                     cellak[s, o].BackColor = vilagosit(szinek[ertek]);
+
+                    string[] tag = cellak[s, o].Tag.ToString().Split('_');
+                    tag[4] = "1";
+                    cellak[s, o].Tag = string.Join("_", tag);
+
                     //cellak[s, o].Tag = $"{tagS}_{tagO}_0";
                     s = s + ellS;
                     o = o + ellO;

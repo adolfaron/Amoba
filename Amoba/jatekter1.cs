@@ -129,12 +129,12 @@ namespace Amoba
                     Color hatter = kijelolt ? Color.DarkGray : jatekosok.BackColor;
                     Color szoveg = kijelolt ? Color.White : jatekosok.ForeColor;
 
-                    using (SolidBrush bg = new SolidBrush(hatter))
+                    using (SolidBrush bg = new SolidBrush(hatter)) //háttér kitöltése, using: automatikusan eldobja a bg objektumot a blokk végén, így nem kell manuálisan meghívni a Dispose() metódust
                         e.Graphics.FillRectangle(bg, e.Bounds);
 
                     string szovegTartalom = jatekosok.Items[e.Index].ToString();
 
-                    using (SolidBrush fg = new SolidBrush(szoveg))
+                    using (SolidBrush fg = new SolidBrush(szoveg)) //formázás
                         e.Graphics.DrawString(
                             szovegTartalom,
                             e.Font,
@@ -142,8 +142,6 @@ namespace Amoba
                             e.Bounds.Left + 6,
                             e.Bounds.Top + 10
                         );
-
-                    e.DrawFocusRectangle();
                 };
                 jatekosokKiir();
 

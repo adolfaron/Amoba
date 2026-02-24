@@ -397,8 +397,6 @@ namespace Amoba
                 int s = sor + ellS;
                 int o = oszlop + ellO;
 
-                int kijott = Convert.ToInt32(cellak[s, o].Tag.ToString().Split('_')[4]);
-
                 //kiir.AppendText("\nkülön: "+ellS+"_"+ ellO);
                 kiir.AppendText("\n"+ koordinataSzamSzamol(ellS, ellO));
 
@@ -422,7 +420,7 @@ namespace Amoba
                 }
 
                 if (!(s >= 0 && s < meret && o >= 0 && o < meret)) return;
-
+                int kijott = Convert.ToInt32(cellak[s, o].Tag.ToString().Split('_')[4]);
                 int ellErtek = Convert.ToInt32(cellak[s, o].Tag.ToString().Split('_')[2]);
                 if (ellErtek == ertek && kijott == 0)
                 {

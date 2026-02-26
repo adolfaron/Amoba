@@ -37,7 +37,7 @@ namespace Amoba
             // kiir
             // 
             kiir.Location = new Point(548, 7);
-            kiir.Margin = new Padding(2, 2, 2, 2);
+            kiir.Margin = new Padding(2);
             kiir.Name = "kiir";
             kiir.Size = new Size(329, 270);
             kiir.TabIndex = 0;
@@ -55,7 +55,7 @@ namespace Amoba
             Resize += meretez;
             ResumeLayout(false);
 
-            
+
 
         }
 

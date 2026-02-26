@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.SqlTypes;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -90,7 +91,7 @@ namespace Amoba
                         this.Controls.Add(cella);
                         cella.Click += new(cekkaKatt);
                         cella.SizeMode = PictureBoxSizeMode.StretchImage;
-                        cella.Tag = $"{sor}_{oszlop}_0_0_0";
+                        cella.Tag = $"{sor}_{oszlop}_0_0_0000";
                     }
                 }
                 kovJatekosMutat = new Label()
@@ -265,7 +266,7 @@ namespace Amoba
                         cellak[dbsor, dboszlop].BackColor = Color.LightGray;
                         cellak[dbsor, dboszlop].Image = kepek[0];
 
-                        cellak[dbsor, dboszlop].Tag = $"{dbsor}_{dboszlop}_0_0_0";
+                        cellak[dbsor, dboszlop].Tag = $"{dbsor}_{dboszlop}_0_0_0000";
                     }
                 }
             }
@@ -418,14 +419,34 @@ namespace Amoba
                         iranyDb[ind + 4] = 0;
                     }
                 }
-
+                
                 if (!(s >= 0 && s < meret && o >= 0 && o < meret)) return;
-                int kijott = Convert.ToInt32(cellak[s, o].Tag.ToString().Split('_')[4]);
+                string kijott = cellak[s, o].Tag.ToString().Split('_')[4];
                 int ellErtek = Convert.ToInt32(cellak[s, o].Tag.ToString().Split('_')[2]);
-                if (ellErtek == ertek && kijott == 0)
+                //függőleges, jobb föl átló, vízszintes, jobb le átló
+
+                int kijottNez = -1;
+                if ((ellS == -1 && ellO == -1)|| (ellS == 1 && ellO == 1)) {
+                    kijottNez = 3;
+                }
+                else if ((ellS == -1 && ellO == 0) || (ellS == 1 && ellO == 0))
+                {
+                    kijottNez = 0;
+                }
+                else if ((ellS == -1 && ellO == 1) || (ellS == 1 && ellO == -1))
+                {
+                    kijottNez = 1;
+                }
+                else if ((ellS == 0 && ellO == -1) || (ellS == 0 && ellO == 1))
+                {
+                    kijottNez = 2;
+                }
+
+                if (ellErtek == ertek && kijott[kijottNez] == '0')
                 {
                     if (!ellenorizve.Contains(s + "_" + o))
                     {
+
                         //cellak[s, o].BackColor = Color.Red;
                         //cellak[sor, oszlop].BackColor = Color.Blue;
                         ellenoriz(s, o, ertek, (ellS.ToString() + "_" + ellO.ToString()));
@@ -507,7 +528,26 @@ namespace Amoba
                     cellak[s, o].BackColor = vilagosit(szinek[ertek]);
 
                     string[] tag = cellak[s, o].Tag.ToString().Split('_');
-                    tag[4] = "1";
+                    int kijottNez = -1;
+                    if ((ellS == -1 && ellO == -1) || (ellS == 1 && ellO == 1))
+                    {
+                        kijottNez = 3;
+                    }
+                    else if ((ellS == -1 && ellO == 0) || (ellS == 1 && ellO == 0))
+                    {
+                        kijottNez = 0;
+                    }
+                    else if ((ellS == -1 && ellO == 1) || (ellS == 1 && ellO == -1))
+                    {
+                        kijottNez = 1;
+                    }
+                    else if ((ellS == 0 && ellO == -1) || (ellS == 0 && ellO == 1))
+                    {
+                        kijottNez = 2;
+                    }
+                    string kijott = tag[4];
+                    kijott =kijott.Remove(kijottNez, 1).Insert(kijottNez, "1");
+                    tag[4] = kijott;
                     cellak[s, o].Tag = string.Join("_", tag);
 
                     //cellak[s, o].Tag = $"{tagS}_{tagO}_0";
@@ -558,5 +598,10 @@ namespace Amoba
             int b = color.B/2;
             return Color.FromArgb(r, g, b);
         }
+
+        //binárissá:
+        //Convert.ToString(be, 2)
+        //decimálissá:
+        //Convert.ToInt32(be, 2);
     }
 }

@@ -521,7 +521,7 @@ namespace Amoba
             if (s >= 0 && s < meret && o >= 0 && o < meret)
             {
                 ujertek = Convert.ToInt32(cellak[s, o].Tag.ToString().Split('_')[2]);
-
+                
                 while (ujertek == ertek)
                 {
                     if (!(s >= 0 && s < meret && o >= 0 && o < meret)) break;
@@ -546,6 +546,7 @@ namespace Amoba
                         kijottNez = 2;
                     }
                     string kijott = tag[4];
+                    if (kijott[kijottNez] == '1') break;
                     kijott =kijott.Remove(kijottNez, 1).Insert(kijottNez, "1");
                     tag[4] = kijott;
                     cellak[s, o].Tag = string.Join("_", tag);
@@ -569,7 +570,7 @@ namespace Amoba
             ellS = Convert.ToInt32(irany.Split('_')[0]);
             ellO = Convert.ToInt32(irany.Split('_')[1]);
             ujertek = ertek;
-
+            bool elso = true;
             while (ujertek == ertek)
             {
                 if (!(s >= 0 && s < meret && o >= 0 && o < meret)) break;
@@ -577,6 +578,30 @@ namespace Amoba
                 {
                     cellak[s, o].BackColor = vilagosit(szinek[ertek]);
                     //cellak[s, o].Tag = $"{tagS}_{tagO}_0";
+                    string[] tag = cellak[s, o].Tag.ToString().Split('_');
+                    int kijottNez = -1;
+                    if ((ellS == -1 && ellO == -1) || (ellS == 1 && ellO == 1))
+                    {
+                        kijottNez = 3;
+                    }
+                    else if ((ellS == -1 && ellO == 0) || (ellS == 1 && ellO == 0))
+                    {
+                        kijottNez = 0;
+                    }
+                    else if ((ellS == -1 && ellO == 1) || (ellS == 1 && ellO == -1))
+                    {
+                        kijottNez = 1;
+                    }
+                    else if ((ellS == 0 && ellO == -1) || (ellS == 0 && ellO == 1))
+                    {
+                        kijottNez = 2;
+                    }
+                    string kijott = tag[4];
+                    if (kijott[kijottNez] == '1' && !elso) break;
+                    elso = false;
+                    kijott = kijott.Remove(kijottNez, 1).Insert(kijottNez, "1");
+                    tag[4] = kijott;
+                    cellak[s, o].Tag = string.Join("_", tag);
                 }
 
                 s = s + ellS;

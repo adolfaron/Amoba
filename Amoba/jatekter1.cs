@@ -42,7 +42,7 @@ namespace Amoba
         string kattintottKord = "-1_-1";
         int kiKov = 0;
         List<Image> kepek = new List<Image>();
-                List<int> pontszamok = new List<int>();
+        List<int> pontszamok = new List<int>();
 
 
         int[] iranyDb = new int[] { 1, 1, 1, 1, 0, 0, 0, 0 };//függőleges, jobb föl átló, vízszintes, jobb le átló
@@ -229,7 +229,7 @@ namespace Amoba
                 }
             }
         }
-
+        //itt tartunk
 
         private void cekkaKatt(object sender, EventArgs e)
         {

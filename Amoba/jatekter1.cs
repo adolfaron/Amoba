@@ -355,8 +355,25 @@ namespace Amoba
                         //if (s >= 0 && s < meret && o >= 0 && o < meret) continue;
                         //cellak[s, o].BackColor = Color.Orange;
                         int ellErtek = Convert.ToInt32(cellak[s, o].Tag.ToString().Split('_')[2]);
-                        int kijott = Convert.ToInt32(cellak[s, o].Tag.ToString().Split('_')[4]);
-                        if (ellErtek == ertek && kijott == 0)
+                        string kijott = cellak[s, o].Tag.ToString().Split('_')[4];
+                        int kijottNez = -1;
+                        if ((i == -1 && j == -1) || (i == 1 && j == 1))
+                        {
+                            kijottNez = 3;
+                        }
+                        else if ((i == -1 && j == 0) || (i == 1 && j == 0))
+                        {
+                            kijottNez = 0;
+                        }
+                        else if ((i == -1 && j == 1) || (i == 1 && j == -1))
+                        {
+                            kijottNez = 1;
+                        }
+                        else if ((i == 0 && j == -1) || (i == 0 && j == 1))
+                        {
+                            kijottNez = 2;
+                        }
+                        if (ellErtek == ertek && kijott[kijottNez] == '0')
                         {
                             int iranyindex = koordinataSzamSzamol(i, j);
                             /*int db = iranyDb[iranyindex];
